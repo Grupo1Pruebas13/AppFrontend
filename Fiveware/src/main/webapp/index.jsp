@@ -11,7 +11,7 @@
 	<div class="caja-login">
 		<div class="circulogo"></div>
 		<img class="imglogin" src="img/logo-5ware.png" alt="FiveWare" />
-		<form>
+		<form action="./Servlet" method="post">
 			<div class="cajadatos">
 				<h1>FIVEWARE</h1>
 				<!--login-->
