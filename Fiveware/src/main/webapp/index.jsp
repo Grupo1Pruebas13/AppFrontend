@@ -13,7 +13,7 @@
 		<img class="imglogin" src="img/logo-5ware.png" alt="FiveWare" />
 		<form action="./Servlet" method="post">
 			<div class="cajadatos">
-				<h1>FIVEWARE</h1>
+				<h1>FIVEWARE PRUEBA</h1>
 				<!--login-->
 				<label for="user">Nombre de Usuario</label> <input type="text"
 					name="txtUser">
