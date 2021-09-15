@@ -6,14 +6,15 @@
 <meta charset="UTF-8">
 <title>FiveWare Login</title>
 <link href="css/estilos.css" rel='stylesheet' />
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
-<body>
+<body class="bodyLogin">
 	<div class="caja-login">
 		<div class="circulogo"></div>
 		<img class="imglogin" src="img/logo-5ware.png" alt="FiveWare" />
 		<form action="./Servlet" method="post">
 			<div class="cajadatos">
-				<h1>FIVEWARE PRUEBA</h1>
+				<h1>FIVEWARE</h1>
 				<!--login-->
 				<label for="user">Nombre de Usuario</label> <input type="text"
 					name="txtUser">

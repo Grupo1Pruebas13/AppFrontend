@@ -6,7 +6,9 @@
     
 }
 
-body{
+/*-------------------------INICIO LOGIN----------------------------------------*/
+
+.bodyLogin{
     
     margin: 0;
     padding :0;
@@ -126,3 +128,109 @@ body{
     line-height: 20px;
     color : #caf0f8;
 }
+
+
+/*----------------------------------FIN LOGIN-----------------------------------*/
+
+
+/*-------------------------------INICIO INICIO-----------------------------------*/
+
+body{
+	margin: 0;
+    padding :0;
+    background: #CAF0F8;
+}
+
+.circuloLogo{
+    background: #CAF0F8;
+    border-radius: 50%;
+    position: fixed;
+    top: -22px;
+    left: -30px;
+    width: 160px;
+    height: 160px;
+
+
+}
+
+.logoGeneral{
+    position: fixed;
+    width: 100px;
+    left: 10px;
+    top:10px;
+
+}
+
+.contGeneral{
+	background:#CAF0F8;
+}
+
+.nav ul{
+	margin: 0;
+    padding: 0;
+    text-align: center;
+	background:#03045E;
+}
+
+.nav ul li{
+    display: inline-block;
+}
+
+.nav ul li a{
+
+    display: block;
+    padding: 0rem 1.2rem;
+    font-weight: bold;
+}  
+
+.nav a:hover {
+    
+    transition: all 0.4s linear;
+    background: #0077B6;
+    color: #03045E;  
+    padding: 2.1rem 1.2rem;
+    margin-top: -2.5em;
+    margin-bottom: -2.5em;
+
+}    
+
+.select {
+    background: #0077B6;
+    padding: 2.1rem 1.2rem !important;
+    margin-top: -2.5em;
+    margin-bottom: -2.5em;
+    
+}
+
+.boton_nav{
+    padding: 2.1rem 1.2rem;
+}
+
+.texto_nav{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.usuarioActivo{
+    text-align: center;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background: #0077B6;
+    border-radius: 20px;
+    top: 3%;
+    left: 88%;
+}
+
+.nombreUsuario{
+    position: relative;
+    font-size: 20px;
+    color: #CAF0F8;
+
+}
+
+
+/*----------------------------------FIN INICIO-----------------------------------*/
