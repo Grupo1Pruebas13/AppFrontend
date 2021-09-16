@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>FiveWare Inicio</title>
 <link href="css/estilos.css" rel='stylesheet' />
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
 	<div class="contGeneral">
