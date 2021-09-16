@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>FiveWare Login</title>
 <link href="css/estilos.css" rel='stylesheet' />
-<link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
 <body class="bodyLogin">
 	<div class="caja-login">

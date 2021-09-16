@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>FiveWare Inicio</title>
 <link href="css/estilos.css" rel='stylesheet' />
-<link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
 <body>
 	<div class="contGeneral">

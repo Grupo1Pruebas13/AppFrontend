@@ -135,8 +135,9 @@
 
 /*-------------------------------INICIO INICIO-----------------------------------*/
 
+
 body{
-	margin: 0;
+    margin: 0;
     padding :0;
     background: #CAF0F8;
 }
@@ -162,14 +163,14 @@ body{
 }
 
 .contGeneral{
-	background:#CAF0F8;
+    background:#CAF0F8;
 }
 
 .nav ul{
-	margin: 0;
+    margin: 0;
     padding: 0;
     text-align: center;
-	background:#03045E;
+    background:#03045E;
 }
 
 .nav ul li{
