@@ -4,31 +4,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FiveWare Login</title>
 <link href="css/estilos.css" rel='stylesheet' />
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body class="bodyLogin">
 	<div class="caja-login">
-		<div class="circulogo"></div>
-		<img class="imglogin" src="img/logo-5ware.png" alt="FiveWare" />
-		<form action="./Servlet" method="post">
+		
+		<img class="imglogin" src="img/logo5waredef.png" alt="FiveWare"/>
+		<form class="form-sign" method="get" action="./DemoServlet"> <!-- todo lo que esta el en formulario pasa al demo servlet -->
 			<div class="cajadatos">
 				<h1>FIVEWARE</h1>
 				<!--login-->
-				<label for="user">Nombre de Usuario</label> <input type="text"
-					name="txtUser">
+				<label for="txtusuario">Nombre de Usuario</label> 
+				<input type="text" name="txtusuario" id="txtusuario" class="form-control">
 
 				<!--passwd-->
-				<label for="passwd">Contraseña</label> <input type="password"
-					name="txtPasswd">
+				<label for="txtpassword">Contraseña</label> 
+				<input type="password" name="txtpassword" id="txtpassword" class="form-control">
+				
 				<!--btn-->
-				<input class="btnlogin" type="submit" value="Ingresar">
+				<input type="submit" name="accion" value="Ingresar" class="btn btn-primary btnlogin"><br/>
 				<!--cambiar passwd o crear cuenta-->
 				<a href="#">Olvidé mi contraseña</a>
 			</div>
 		</form>
+		
 
 	</div>
+	
+	
+	
 </body>
 </html>
