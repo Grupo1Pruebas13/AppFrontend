@@ -14,7 +14,7 @@
 	<div class="caja-login">
 		
 		<img class="imglogin" src="img/logo5waredef.png" alt="FiveWare"/>
-		<form class="form-sign" method="get" action="./FiveServlet"> <!-- todo lo que esta el en formulario pasa al demo servlet -->
+		<form class="form-sign" method="post" action="./FiveServlet"> <!-- todo lo que esta el en formulario pasa al demo servlet -->
 			<div class="cajadatos">
 				<h1>FIVEWARE</h1>
 				<!--login-->
