@@ -16,7 +16,30 @@ public class Controlador extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String accion = request.getParameter("accion");
+		
+		if (accion.equals("Crear")) {
+			Usuarios usuario = new Usuarios();
+			usuario.setCedula_usuario(Long.parseLong(request.getParameter("txtCedula")));
+			usuario.setNombre_usuario(request.getParameter("txtNombre"));
+			usuario.setEmail_usuario(request.getParameter("email"));
+			usuario.setUsuario(request.getParameter("txtUser"));
+			usuario.setPassword(request.getParameter("txtPasswd"));
+			int respuesta = 0;
+			try {
+				respuesta = UsuariosJSON.postJSON(usuario);
+				if (respuesta == 200) {
+					request.getRequestDispatcher("/usuarios.jsp").forward(request, response);
+					System.out.println("Exito" + respuesta);
+				} else {
+					System.out.println("Error: " + respuesta);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

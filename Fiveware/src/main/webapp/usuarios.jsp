@@ -14,7 +14,7 @@
 		<div class="circuloLogo"></div>
 		<img class="logoGeneral" src="img/logo-5ware.png" alt="FiveWare" />
 		<div class="usuarioActivo" name="usuarioActivo"><p class="nombreUsuario">Julio Hernandez</p></div>
-		<p class="cerrarSesion" name="cerrarSesion">Cerrar Sesión</p>
+		<a class="cerrarSesion">Cerrar Sesión</a>
 		<nav class="nav">	
 			<ul>
 				<li class="boton_nav" ><a href="inicio.jsp"><p class="texto_nav">Inicio</p></a></li>
@@ -30,7 +30,7 @@
 	
 	<div class="FormUsers">
         
-        <form>
+        <form method="get" action="Controlador">
             <h1>FIVEWARE</h1>
             
             <h2>USUARIOS</h2>
@@ -63,10 +63,10 @@
 			    </div>
 			            
 	            <div class="contenedorbtn">
-	                <input class="BtnForm" type="submit" value="Consultar" id="BtnConsultar" name="BtnConsultar"/>
-	                <input class="BtnForm" type="submit" value="Crear" id="BtnCrear" name="BtnCrear"/>
-	                <input class="BtnForm" type="submit" value="Actualizar" id="BtnActualizar" name="BtnActualizar"/>
-	                <input class="BtnForm" type="submit" value="Borrar" id="BtnBorrar" name="BtnBorrar"/>
+	                <input class="BtnForm" type="submit" value="Consultar" id="BtnConsultar" name="accion"/>
+	                <input class="BtnForm" type="submit" value="Crear" id="BtnCrear" name="accion"/>
+	                <input class="BtnForm" type="submit" value="Actualizar" id="BtnActualizar" name="accion"/>
+	                <input class="BtnForm" type="submit" value="Borrar" id="BtnBorrar" name="accion"/>
 	        
 	            </div>
 
