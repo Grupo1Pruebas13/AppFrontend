@@ -10,7 +10,6 @@
 </head>
 <body>
 	<div class="contGeneral">
-
 		<div class="circuloLogo"></div>
 		<img class="logoGeneral" src="img/logo-5ware.png" alt="FiveWare" />
 		<div class="usuarioActivo" name="usuarioActivo"><p class="nombreUsuario">Julio Hernandez</p></div>
@@ -26,18 +25,13 @@
 			</ul>		
 		</nav>
 	</div>
-	
-	
 	<div class="FormUsers">
-        
         <form method="get" action="Controlador">
             <h1>FIVEWARE</h1>
-            
             <h2>USUARIOS</h2>
 			    <div class="contenedorppal">
 			        <div>
-			            
-			            <div class="FormElement">
+			           <div class="FormElement">
 			                <label for="txtCedula">Cédula:</label>
 			                <input type="text" id="txtCedula" name="txtCedula"/><br/>
 			            </div>
@@ -61,18 +55,13 @@
 			            </div>
 			        </div>
 			    </div>
-			            
-	            <div class="contenedorbtn">
+			    <div class="contenedorbtn">
 	                <input class="BtnForm" type="submit" value="Consultar" id="BtnConsultar" name="accion"/>
 	                <input class="BtnForm" type="submit" value="Crear" id="BtnCrear" name="accion"/>
 	                <input class="BtnForm" type="submit" value="Actualizar" id="BtnActualizar" name="accion"/>
 	                <input class="BtnForm" type="submit" value="Borrar" id="BtnBorrar" name="accion"/>
-	        
-	            </div>
-
-        </form>
-        
+	        	</div>
+		</form>
     </div>
-    
 </body>
 </html>
