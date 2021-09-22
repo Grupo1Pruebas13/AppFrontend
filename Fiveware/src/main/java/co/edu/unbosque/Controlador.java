@@ -53,7 +53,7 @@ public class Controlador extends HttpServlet {
 				respuesta = UsuariosJSON.postJSON(usuario);
 				if (respuesta == 200) {
 					request.getRequestDispatcher("/usuarios.jsp").forward(request, response);
-					System.out.println("Exito" + respuesta);
+					System.out.println("Exito " + respuesta);
 				} else {
 					System.out.println("Error: " + respuesta);
 				}
