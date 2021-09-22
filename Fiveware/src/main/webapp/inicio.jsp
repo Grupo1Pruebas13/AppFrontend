@@ -9,6 +9,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
+	<header>
 	<div class="contGeneral">
 
 		<div class="circuloLogo"></div>
@@ -28,5 +29,6 @@
 
 
 	</div>
+	</header>
 </body>
 </html>
