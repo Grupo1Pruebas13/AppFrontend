@@ -13,7 +13,7 @@
 
 		<div class="circuloLogo"></div>
 		<img class="logoGeneral" src="img/logo-5ware.png" alt="FiveWare" />
-		<div class="usuarioActivo" ><p class="nombreUsuario">Julio Hernandez</p></div>
+		<div class="usuarioActivo" ><p class="nombreUsuario">${usuario.getNombre_usuario()}</p></div>
 		<a class="cerrarSesion" href="index.jsp">Cerrar Sesión</a>
 		<nav class="nav">	
 			<ul>
