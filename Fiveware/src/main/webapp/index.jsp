@@ -7,12 +7,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FiveWare Login</title>
-<link href="css/estilos.css" rel='stylesheet' />
+<link href="css/Login.css" rel='stylesheet' />
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body class="bodyLogin">
 	<div class="caja-login">
-
 		<img class="imglogin" src="img/logo5waredef.png" alt="FiveWare" />
 		<form class="form-sign" method="post" action="./FiveServlet">
 			<!-- todo lo que esta el en formulario pasa al demo servlet -->
@@ -21,11 +20,9 @@
 				<!--login-->
 				<label for="txtusuario">Nombre de Usuario</label> <input type="text"
 					name="txtusuario" id="txtusuario" class="form-control">
-
 				<!--passwd-->
 				<label for="txtpassword">Contraseña</label> <input type="password"
 					name="txtpassword" id="txtpassword" class="form-control">
-
 				<!--btn-->
 				<input type="submit" name="accion" value="Ingresar"
 					class="btn btn-primary btnlogin"><br />
@@ -33,12 +30,7 @@
 				<a href="#">Olvidé mi contraseña</a>
 			</div>
 		</form>
-
-
 	</div>
-
 	<p style="color: #caf0f8; text-align: center; font-size: 20px;">${message}</p>
-
-
 </body>
 </html>
