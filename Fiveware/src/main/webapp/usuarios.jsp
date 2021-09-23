@@ -1,67 +1,90 @@
+<%@page import="co.edu.unbosque.Usuarios"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>FiveWare Usuarios</title>
-<link href="css/estilos.css" rel='stylesheet' />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+<title>Usuarios FiveWare</title>
+<link href="css/Usuarios.css" rel="stylesheet"/>
+
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
-<body>
+<body class="bodyusuarios">
+	<header>
 	<div class="contGeneral">
+
 		<div class="circuloLogo"></div>
 		<img class="logoGeneral" src="img/logo-5ware.png" alt="FiveWare" />
-		<div class="usuarioActivo" name="usuarioActivo"><p class="nombreUsuario">${usuario.getNombre_usuario()}</p></div>
-		<a class="cerrarSesion">Cerrar Sesión</a>
+		<div class="usuarioActivo" ><p class="nombreUsuario">${usuario.getNombre_usuario()}</p></div>
+		<a class="cerrarSesion" href="index.jsp">Cerrar Sesión</a>
 		<nav class="nav">	
 			<ul>
-				<li class="boton_nav" ><a href="inicio.jsp"><p class="texto_nav">Inicio</p></a></li>
-				<li class="boton_nav" ><a class="select" href="usuarios.jsp"><p class="texto_nav">Usuarios</p></a></li>
+				<li class="boton_nav" ><a class="select" href="inicio.jsp"><p class="texto_nav">Inicio</p></a></li>
+				<li class="boton_nav" ><a href="usuarios.jsp"><p class="texto_nav">Usuarios</p></a></li>
 				<li class="boton_nav" ><a href="clientes.jsp"><p class="texto_nav">Clientes</p></a></li>
 				<li class="boton_nav" ><a href="proveedores.jsp"><p class="texto_nav">Proveedores</p></a></li>
 				<li class="boton_nav" ><a href="productos.jsp"><p class="texto_nav">Productos</p></a></li>
 				<li class="boton_nav" ><a href="ventas.jsp"><p class="texto_nav">Ventas</p></a></li>
 			</ul>		
 		</nav>
+
+
 	</div>
-	<div class="FormUsers">
-        <form method="get" action="Controlador">
-            <h1>FIVEWARE</h1>
-            <h2>USUARIOS</h2>
-			    <div class="contenedorppal">
-			        <div>
-			           <div class="FormElement">
-			                <label for="txtCedula">Cédula:</label>
-			                <input type="text" id="txtCedula" name="txtCedula"/><br/>
-			            </div>
-			            <div class="FormElement">
-			                <label for="txtNombre">Nombre Completo:</label>
-			                <input type="text" id="txtNombre" name="txtNombre"/><br/>
-			            </div>   
-			            <div class="FormElement">
-			                <label for="email">Correo Electrónico:</label>
-			                <input type="email" id="email" name="email"/><br/>
-			            </div>
-			        </div>    
-			        <div>
-			            <div class="FormElement">
-			                <label for="txtUser">Usuario:</label>
-			                <input type="text" id="txtUser" name="txtUser"/><br/>
-			            </div>
-			            <div class="FormElement">
-			                <label for="txtPasswd">Contraseña:</label>
-			                <input type="password" id="txtPasswd" name="txtPasswd"/><br/>
-			            </div>
-			        </div>
+	</header>
+
+<h1>MÓDULO USUARIOS</h1>
+
+
+	
+    <!-- prueba prueba prueba prueba -->
+    <div>
+    
+    		<div class="contenedorppalusuarios">
+    		<div>
+    		<!-- <img alt="FiveWare" src="img/logo5waredef.png" style="width: 50px; height: 50px"> -->
+    		<h5></h5>
+    		<h4>Desde aquí puede gestionar los usuarios:</h4>
+ 				<form class="form-sign" method="get" action="Controlador">
+	    		<div class="form-group">
+	    			<div class="FormElement">
+	    			<input type="hidden" name="menu" value="Usuarios">
+	    			<label for="txtcedula">Cédula:</label>
+	                <input type="text" id="txtcedula" name="txtcedula"class="form-control" value=""/><br/>
+	                </div>
+	    		</div>
+	    		<div class="FormElement">
+			        <label for="txtnombre">Nombre:</label>
+			        <input type="text" id="txtnombre" name="txtnombre" class="form-control" value="">
+			    </div>
+			    <div class="FormElement">
+			        <label for="txtemail">Email:</label>
+			        <input type="text" id="txtemail" name="txtemail" class="form-control" value="">
+			   	</div>
+			    <div class="FormElement">
+			        <label for="txtusuario">Usuario:</label>
+			        <input type="text" id="txtusuario" name="txtusuario" class="form-control" value="">
+				</div>
+			    <div class="FormElement">
+			        <label for="txtpassword">Password:</label>
+			        <input type="password" id="txtpassword" name="txtpassword" class="form-control" value="">
 			    </div>
 			    <div class="contenedorbtn">
-	                <input class="BtnForm" type="submit" value="Consultar" id="BtnConsultar" name="accion"/>
-	                <input class="BtnForm" type="submit" value="Crear" id="BtnCrear" name="accion"/>
-	                <input class="BtnForm" type="submit" value="Actualizar" id="BtnActualizar" name="accion"/>
-	                <input class="BtnForm" type="submit" value="Borrar" id="BtnBorrar" name="accion"/>
-	        	</div>
-		</form>
-    </div>
+			    <input type="submit" class="btn BtnForm" name="accion" value="Crear">
+			    <input type="submit" class="btn BtnForm" name="accion" value="Actualizar">	
+			    </div>
+	    		</form>	
+	    		
+	    		
+    		</div>
+    		
+    		
+    		
+		   </div>
+	</div>
+
 </body>
 </html>
