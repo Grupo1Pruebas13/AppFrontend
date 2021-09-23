@@ -53,24 +53,24 @@
 	    			<div class="FormElement">
 	    			<input type="hidden" name="menu" value="Usuarios">
 	    			<label for="txtcedula">Cédula:</label>
-	                <input type="text" id="txtcedula" name="txtcedula"class="form-control" value=""/><br/>
+	                <input type="text" id="txtcedula" name="txtCedula"class="form-control" value=""/><br/>
 	                </div>
 	    		</div>
 	    		<div class="FormElement">
 			        <label for="txtnombre">Nombre:</label>
-			        <input type="text" id="txtnombre" name="txtnombre" class="form-control" value="">
+			        <input type="text" id="txtnombre" name="txtNombre" class="form-control" value="">
 			    </div>
 			    <div class="FormElement">
 			        <label for="txtemail">Email:</label>
-			        <input type="text" id="txtemail" name="txtemail" class="form-control" value="">
+			        <input type="text" id="txtemail" name="email" class="form-control" value="">
 			   	</div>
 			    <div class="FormElement">
 			        <label for="txtusuario">Usuario:</label>
-			        <input type="text" id="txtusuario" name="txtusuario" class="form-control" value="">
+			        <input type="text" id="txtusuario" name="txtUser" class="form-control" value="">
 				</div>
 			    <div class="FormElement">
 			        <label for="txtpassword">Password:</label>
-			        <input type="password" id="txtpassword" name="txtpassword" class="form-control" value="">
+			        <input type="password" id="txtpassword" name="txtPasswd" class="form-control" value="">
 			    </div>
 			    <div class="contenedorbtn">
 			    <input type="submit" class="btn BtnForm" name="accion" value="Crear">
