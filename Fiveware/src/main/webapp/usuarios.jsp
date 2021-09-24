@@ -80,6 +80,36 @@
 	    		
 	    		
     		</div>
+    		<table>
+    		<caption>FIVEWARE - LISTADO DE USUARIOS</caption>
+        	<thead>
+	            <tr>
+	                <th scope="col">Cedula</th>
+	                <th scope="col">Nombre</th>
+	                <th scope="col">Email</th>
+	                <th scope="col">Usuario</th>
+	                <th scope="col">Password</th>
+	                <th scope="col">ACCIÓN</th>
+	           	</tr>
+        	</thead>
+        	<tbody>
+            <% ArrayList<Usuarios> lista= (ArrayList<Usuarios>) request.getAttribute("lista");
+			for (Usuarios usuario:lista){
+			%>
+			<tr>
+				<td><%=usuario.getCedula_usuario()%></td>
+				<td><%=usuario.getNombre_usuario()%></td>
+				<td><%=usuario.getEmail_usuario()%></td>
+				<td><%=usuario.getUsuario()%></td>
+				<td><%=usuario.getPassword()%></td>
+				<td> 
+	               <a class="BtnForm" href="Controlador?menu=Usuarios&accion=Cargar&id=<%=usuario.getCedula_usuario()%>">Editar</a>
+	               <a class="BtnForm" href="Controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedula_usuario()%>">Eliminar</a>
+            	</td>
+            </tr>
+            <%}%>
+        	</tbody>
+    	</table>
     		
     		
     		

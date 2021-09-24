@@ -474,6 +474,11 @@ html{
     height: 100%;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+
+}
 
 th{
 	color: #caf0f8;
@@ -505,7 +510,6 @@ h1{
 .contenedorppalusuarios{
 	
 	display: flex;
-	padding: 30px;
 	width: 100%;
 	color: #023e8a;
 	margin: 70px auto;
@@ -559,7 +563,13 @@ caption{
     width: 80px;
     padding: 5px;
     border: none;
+    text-decoration: none;
+    
 
+}
+
+.BtnForm a{
+	text-decoration: none;
 }
 
 .BtnForm:hover{
