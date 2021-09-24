@@ -2,6 +2,7 @@ package co.edu.unbosque;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,8 +22,14 @@ public class Controlador extends HttpServlet {
 			throws ServletException, IOException {
 
 		String accion = request.getParameter("accion");
-
-		if (accion.equals("Crear")) {
+		if (accion.equals("Listar")) {
+		     try {
+		        ArrayList<Usuarios> lista = UsuariosJSON.getJSON();
+			 request.setAttribute("lista", lista);
+		     } catch (Exception e) {
+			 e.printStackTrace();
+		     }
+		  }else if (accion.equals("Crear")) {
 			Usuarios usuario = new Usuarios();
 			usuario.setCedula_usuario(Long.parseLong(request.getParameter("txtCedula")));
 			usuario.setNombre_usuario(request.getParameter("txtNombre"));

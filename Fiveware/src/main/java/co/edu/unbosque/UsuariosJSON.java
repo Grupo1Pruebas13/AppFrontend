@@ -36,7 +36,7 @@ public class UsuariosJSON {
 			lista.add(usuario);
 		}
 		return lista;
-	}
+	}	
 
 	public static ArrayList<Usuarios> getJSON() throws IOException, ParseException {
 

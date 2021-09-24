@@ -35,7 +35,7 @@ public class Servlet extends HttpServlet {
 			}
 
 			if (respuesta == 0) {
-				String message = "Credenciales incorrectas o campos vacios <br> por favor verifique o póngase en contacto con un administrador";
+				String message = "Credenciales incorrectas o campos vacios <br> por favor verifique o pÃ³ngase en contacto con un administrador";
 				request.setAttribute("message", message);
 				request.getRequestDispatcher("/index.jsp").forward(request, response);
 				System.out.println("No se encontraron datos");
