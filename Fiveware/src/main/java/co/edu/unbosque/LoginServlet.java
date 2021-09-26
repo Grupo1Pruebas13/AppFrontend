@@ -2,7 +2,6 @@ package co.edu.unbosque;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,14 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/FiveServlet")
-public class Servlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public Servlet() {
-        super();
-    }
-    
-    public void validarUsuarios(HttpServletRequest request, HttpServletResponse response)
+
+	public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void validarUsuarios(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
 			ArrayList<Usuarios> lista = UsuariosJSON.getJSON();
@@ -35,8 +35,6 @@ public class Servlet extends HttpServlet {
 			}
 
 			if (respuesta == 0) {
-				String message = "Credenciales incorrectas o campos vacios <br> por favor verifique o póngase en contacto con un administrador";
-				request.setAttribute("message", message);
 				request.getRequestDispatcher("/index.jsp").forward(request, response);
 				System.out.println("No se encontraron datos");
 			}
@@ -47,18 +45,26 @@ public class Servlet extends HttpServlet {
 		}
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String accion = request.getParameter("accion");
 		if (accion.equals("Ingresar")) {
 			this.validarUsuarios(request, response);
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String accion = request.getParameter("accion");
-		if (accion.equals("Ingresar")) {
-			this.validarUsuarios(request, response);
-		}
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 	}
 
 }

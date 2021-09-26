@@ -7,6 +7,7 @@ public class Usuarios {
 	private String email_usuario;
 	private String usuario;
 	private String password;
+	
 	public Long getCedula_usuario() {
 		return cedula_usuario;
 	}
@@ -36,5 +37,7 @@ public class Usuarios {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}	
+	}
+	
+	
 }

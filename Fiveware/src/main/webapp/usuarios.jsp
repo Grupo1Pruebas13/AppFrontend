@@ -50,73 +50,68 @@
 
 
 	<!-- prueba prueba prueba prueba -->
-	<div>
+	<div class="contenedorppalusuarios" style="width: 1200px;">
+		<div style="width: 300px; float: left;">
+			<!-- <img alt="FiveWare" src="img/logo5waredef.png" style="width: 50px; height: 50px"> -->
+			<h5></h5>
+			<h4>Desde aquí puede gestionar los usuarios:</h4>
+			<form class="form-sign" method="get" action="controlador">
+				<div class="form-group">
+					<div class="FormElement">
+						<input type="hidden" name="menu" value="Usuarios"> <label
+							for="txtcedula">Cédula:</label> <input type="text" id="txtcedula"
+							name="txtCedula" class="form-control" value="" /><br />
+					</div>
+				</div>
+				<div class="FormElement">
+					<label for="txtnombre">Nombre:</label> <input type="text"
+						id="txtnombre" name="txtNombre" class="form-control" value="">
+				</div>
+				<div class="FormElement">
+					<label for="txtemail">Email:</label> <input type="text"
+						id="txtemail" name="email" class="form-control" value="">
+				</div>
+				<div class="FormElement">
+					<label for="txtusuario">Usuario:</label> <input type="text"
+						id="txtusuario" name="txtUser" class="form-control" value="">
+				</div>
+				<div class="FormElement">
+					<label for="txtpassword">Password:</label> <input type="password"
+						id="txtpassword" name="txtPasswd" class="form-control" value="">
+				</div>
+				<div class="contenedorbtn">
+					<input type="submit" class="btn BtnForm" name="accion"
+						value="Crear"> <input type="submit" class="btn BtnForm"
+						name="accion" value="Actualizar">
+				</div>
+			</form>
 
-		<div class="contenedorppalusuarios">
-			<div>
-				<!-- <img alt="FiveWare" src="img/logo5waredef.png" style="width: 50px; height: 50px"> -->
-				<h5></h5>
-				<h4>Desde aquí puede gestionar los usuarios:</h4>
-				<form class="form-sign" method="get" action="Controlador">
-					<div class="form-group">
-						<div class="FormElement">
-							<input type="hidden" name="menu" value="Usuarios"> <label
-								for="txtcedula">Cédula:</label> <input type="text"
-								id="txtcedula" name="txtCedula" class="form-control" value="" /><br />
-						</div>
-					</div>
-					<div class="FormElement">
-						<label for="txtnombre">Nombre:</label> <input type="text"
-							id="txtnombre" name="txtNombre" class="form-control" value="">
-					</div>
-					<div class="FormElement">
-						<label for="txtemail">Email:</label> <input type="text"
-							id="txtemail" name="email" class="form-control" value="">
-					</div>
-					<div class="FormElement">
-						<label for="txtusuario">Usuario:</label> <input type="text"
-							id="txtusuario" name="txtUser" class="form-control" value="">
-					</div>
-					<div class="FormElement">
-						<label for="txtpassword">Password:</label> <input type="password"
-							id="txtpassword" name="txtPasswd" class="form-control" value="">
-					</div>
-					<div class="contenedorbtn">
-						<input type="submit" class="btn BtnForm" name="accion"
-							value="Crear"> <input type="submit" class="btn BtnForm"
-							name="accion" value="Actualizar">
-					</div>
-				</form>
+		</div>
 
 
-			</div>
-			<table>
+		<div style="width: 900px; float: right;">
+			<table style="width:100%;">
 				<caption>FIVEWARE - LISTADO DE USUARIOS</caption>
 				<thead>
 					<tr>
-						<th scope="col">Cedula</th>
-						<th scope="col">Nombre</th>
+						<th scope="col">Cédula</th>
 						<th scope="col">Email</th>
-						<th scope="col">Usuario</th>
+						<th scope="col">Nombre</th>
 						<th scope="col">Password</th>
+						<th scope="col">Usuario</th>
 						<th scope="col">ACCIÓN</th>
 					</tr>
 				</thead>
 				<tbody>
-					
 					<tr>
 						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
-						<td><a class="BtnForm"
-							href="Controlador?menu=Usuarios&accion=Cargar&id=">Editar</a>
-							<a class="BtnForm"
-							href="Controlador?menu=Usuarios&accion=Eliminar&id=">Eliminar</a>
-						</td>
+						<td><a class="BtnForm" href="">Editar</a> <a class="BtnForm"
+							href="">Eliminar</a></td>
 					</tr>
-				
 				</tbody>
 			</table>
 		</div>
