@@ -2,16 +2,17 @@ package co.edu.unbosque;
 
 public class Clientes {
 
-	private Long cedula_cliente;
+	private String cedula_cliente;
 	private String direccion_cliente;
 	private String email_cliente;
 	private String nombre_cliente;
 	private String telefono_cliente;
 	
-	public Long getCedula_cliente() {
+	
+	public String getCedula_cliente() {
 		return cedula_cliente;
 	}
-	public void setCedula_cliente(Long cedula_cliente) {
+	public void setCedula_cliente(String cedula_cliente) {
 		this.cedula_cliente = cedula_cliente;
 	}
 	public String getDireccion_cliente() {

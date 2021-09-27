@@ -29,6 +29,7 @@ public class controlador extends HttpServlet {
 		case "Principal":
 			request.getRequestDispatcher("/inicio.jsp").forward(request, response);
 			break;
+			
 		case "Usuarios":
 			if (accion.equals("Listar")) {
 				try {
@@ -39,7 +40,7 @@ public class controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Crear")) {
 				Usuarios usuario = new Usuarios();
-				usuario.setCedula_usuario(Long.parseLong(request.getParameter("txtCedula")));
+				usuario.setCedula_usuario(request.getParameter("txtCedula"));
 				usuario.setNombre_usuario(request.getParameter("txtNombre"));
 				usuario.setEmail_usuario(request.getParameter("email"));
 				usuario.setUsuario(request.getParameter("txtUser"));
@@ -60,7 +61,7 @@ public class controlador extends HttpServlet {
 
 			} else if (accion.equals("Actualizar")) {
 				Usuarios usuario = new Usuarios();
-				usuario.setCedula_usuario(Long.parseLong(request.getParameter("txtCedula")));
+				usuario.setCedula_usuario(request.getParameter("txtCedula"));
 				usuario.setNombre_usuario(request.getParameter("txtNombre"));
 				usuario.setEmail_usuario(request.getParameter("email"));
 				usuario.setUsuario(request.getParameter("txtUser"));
@@ -68,7 +69,7 @@ public class controlador extends HttpServlet {
 
 				int respuesta = 0;
 				try {
-					respuesta = UsuariosJSON.putJSON(usuario, usuario.getCedula_usuario());
+					respuesta = UsuariosJSON.putJSON(usuario, Long.parseLong(usuario.getCedula_usuario()));
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
@@ -87,7 +88,7 @@ public class controlador extends HttpServlet {
 					ArrayList<Usuarios> lista1 = UsuariosJSON.getJSON();
 					for (Usuarios usuarios:lista1) {
 						System.out.println(usuarios);
-						if (usuarios.getCedula_usuario() == id) {
+						if (usuarios.getCedula_usuario().equals(id)) {
 							request.setAttribute("usuarioSeleccionado", usuarios);
 							request.getRequestDispatcher("controlador?menu=Usuarios&accion=Listar").forward(request,
 									response);
@@ -115,6 +116,7 @@ public class controlador extends HttpServlet {
 			}
 			request.getRequestDispatcher("/usuarios.jsp").forward(request, response);
 			break;
+			
 		case "Clientes":
 			if (accion.equals("Listar")) {
 				try {
@@ -125,7 +127,7 @@ public class controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Crear")) {
 				Clientes cliente = new Clientes();
-				cliente.setCedula_cliente(Long.parseLong(request.getParameter("txtCedula")));
+				cliente.setCedula_cliente(request.getParameter("txtCedula"));
 				cliente.setDireccion_cliente(request.getParameter("txtdireccion"));
 				cliente.setEmail_cliente(request.getParameter("email"));
 				cliente.setNombre_cliente(request.getParameter("txtNombre"));				
@@ -146,7 +148,7 @@ public class controlador extends HttpServlet {
 
 			} else if (accion.equals("Actualizar")) {
 				Clientes cliente = new Clientes();
-				cliente.setCedula_cliente(Long.parseLong(request.getParameter("txtCedula")));
+				cliente.setCedula_cliente(request.getParameter("txtCedula"));
 				cliente.setDireccion_cliente(request.getParameter("txtdireccion"));
 				cliente.setEmail_cliente(request.getParameter("email"));
 				cliente.setNombre_cliente(request.getParameter("txtNombre"));				
@@ -154,7 +156,7 @@ public class controlador extends HttpServlet {
 
 				int respuesta = 0;
 				try {
-					respuesta = ClientesJSON.putJSON(cliente, cliente.getCedula_cliente());
+					respuesta = ClientesJSON.putJSON(cliente, Long.parseLong(cliente.getCedula_cliente()));
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
@@ -172,7 +174,7 @@ public class controlador extends HttpServlet {
 				try {
 					ArrayList<Clientes> lista1 = ClientesJSON.getJSON();
 					for (Clientes clientes:lista1) {
-						if (clientes.getCedula_cliente() == id) {
+						if (clientes.getCedula_cliente().equals(id)) {
 							request.setAttribute("clienteSeleccionado", clientes);
 							request.getRequestDispatcher("controlador?menu=Clientes&accion=Listar").forward(request,
 									response);

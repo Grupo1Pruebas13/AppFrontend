@@ -60,24 +60,24 @@
 					<div class="FormElement">
 						<input type="hidden" name="menu" value="Usuarios"> <label
 							for="txtcedula">Cédula:</label> <input type="text" id="txtcedula"
-							name="txtCedula" class="form-control" value="" /><br />
+							name="txtCedula" class="form-control" value="${usuarioSeleccionado.getCedula_usuario()}" /><br />
 					</div>
 				</div>
 				<div class="FormElement">
 					<label for="txtnombre">Nombre:</label> <input type="text"
-						id="txtnombre" name="txtNombre" class="form-control" value="">
+						id="txtnombre" name="txtNombre" class="form-control" value="${usuarioSeleccionado.getNombre_usuario()}">
 				</div>
 				<div class="FormElement">
 					<label for="txtemail">Email:</label> <input type="text"
-						id="txtemail" name="email" class="form-control" value="">
+						id="txtemail" name="email" class="form-control" value="${usuarioSeleccionado.getEmail_usuario()}">
 				</div>
 				<div class="FormElement">
 					<label for="txtusuario">Usuario:</label> <input type="text"
-						id="txtusuario" name="txtUser" class="form-control" value="">
+						id="txtusuario" name="txtUser" class="form-control" value="${usuarioSeleccionado.getUsuario()}">
 				</div>
 				<div class="FormElement">
 					<label for="txtpassword">Password:</label> <input type="password"
-						id="txtpassword" name="txtPasswd" class="form-control" value="">
+						id="txtpassword" name="txtPasswd" class="form-control" value="${usuarioSeleccionado.getPassword()}">
 				</div>
 				<div class="contenedorbtn">
 					<input type="submit" class="btn BtnForm" name="accion"
@@ -90,31 +90,38 @@
 
 
 		<div style="width: 900px; float: right;">
-			<table style="width:100%;">
+			<table style="width: 100%;">
 				<caption>FIVEWARE - LISTADO DE USUARIOS</caption>
 				<thead>
 					<tr>
-						<th scope="col">Cédula</th>
-						<th scope="col">Email</th>
+						<th scope="col">Cedula</th>
 						<th scope="col">Nombre</th>
-						<th scope="col">Password</th>
+						<th scope="col">Email</th>
 						<th scope="col">Usuario</th>
+						<th scope="col">Password</th>
 						<th scope="col">ACCIÓN</th>
 					</tr>
 				</thead>
 				<tbody>
+					<%
+					ArrayList<Usuarios> lista = (ArrayList<Usuarios>) request.getAttribute("lista");
+					for (Usuarios usuario : lista) {
+					%>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a class="BtnForm" href="">Editar</a> <a class="BtnForm"
-							href="">Eliminar</a></td>
+						<td><%=usuario.getCedula_usuario()%></td>
+						<td><%=usuario.getNombre_usuario()%></td>
+						<td><%=usuario.getEmail_usuario()%></td>
+						<td><%=usuario.getUsuario()%></td>
+						<td><%=usuario.getPassword()%></td>
+						<td><a class="BtnForm" href="controlador?menu=Usuarios&accion=Cargar&id=<%=usuario.getCedula_usuario()%>">Editar</a> 
+							<a class="BtnForm" href="controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedula_usuario()%>">Eliminar</a></td>
 					</tr>
+					<%}%>
 				</tbody>
 			</table>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 </body>
 </html>

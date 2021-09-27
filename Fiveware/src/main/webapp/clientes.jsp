@@ -1,4 +1,4 @@
-<%@page import="co.edu.unbosque.Usuarios"%>
+<%@page import="co.edu.unbosque.Clientes"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -98,15 +98,20 @@
 					</tr>
 				</thead>
 				<tbody>
+					<%
+					ArrayList<Clientes> lista = (ArrayList<Clientes>) request.getAttribute("lista");
+					for (Clientes cliente : lista) {
+					%>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a class="BtnForm" href="">Editar</a> <a class="BtnForm"
-							href="">Eliminar</a></td>
+						<td><%=cliente.getCedula_cliente()%></td>
+						<td><%=cliente.getDireccion_cliente()%></td>
+						<td><%=cliente.getEmail_cliente()%></td>
+						<td><%=cliente.getNombre_cliente()%></td>
+						<td><%=cliente.getTelefono_cliente()%></td>
+						<td><a class="BtnForm" href="controlador?menu=Clientes&accion=Cargar&id=<%=cliente.getCedula_cliente()%>">Editar</a> 
+							<a class="BtnForm" href="controlador?menu=Clientes&accion=Eliminar&id=<%=cliente.getCedula_cliente()%>">Eliminar</a></td>
 					</tr>
+					<%}%>
 				</tbody>
 			</table>
 		</div>

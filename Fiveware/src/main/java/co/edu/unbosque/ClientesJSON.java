@@ -28,7 +28,7 @@ public class ClientesJSON {
 		while (i.hasNext()) {
 			JSONObject innerObj = (JSONObject) i.next();
 			Clientes cliente = new Clientes();
-			cliente.setCedula_cliente(Long.parseLong(innerObj.get("cedula_cliente").toString()));
+			cliente.setCedula_cliente(innerObj.get("cedula_cliente").toString());
 			cliente.setEmail_cliente(innerObj.get("email_cliente").toString());
 			cliente.setNombre_cliente(innerObj.get("nombre_cliente").toString());
 			cliente.setDireccion_cliente(innerObj.get("direccion_cliente").toString());

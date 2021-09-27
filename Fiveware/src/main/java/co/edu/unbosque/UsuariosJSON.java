@@ -28,7 +28,7 @@ public class UsuariosJSON {
 		while (i.hasNext()) {
 			JSONObject innerObj = (JSONObject) i.next();
 			Usuarios usuario = new Usuarios();
-			usuario.setCedula_usuario(Long.parseLong(innerObj.get("cedula_usuario").toString()));
+			usuario.setCedula_usuario(innerObj.get("cedula_usuario").toString());
 			usuario.setEmail_usuario(innerObj.get("email_usuario").toString());
 			usuario.setNombre_usuario(innerObj.get("nombre_usuario").toString());
 			usuario.setPassword(innerObj.get("password").toString());
