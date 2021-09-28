@@ -86,7 +86,6 @@ public class controlador extends HttpServlet {
 				try {
 					ArrayList<Usuarios> lista1 = UsuariosJSON.getJSON();
 					for (Usuarios usuarios:lista1) {
-						System.out.println(usuarios);
 						if (usuarios.getCedula_usuario().equals(id)) {
 							request.setAttribute("usuarioSeleccionado", usuarios);
 							request.getRequestDispatcher("controlador?menu=Usuarios&accion=Listar").forward(request,
@@ -259,7 +258,6 @@ public class controlador extends HttpServlet {
 				try {
 					ArrayList<Proveedores> lista1 = ProveedoresJSON.getJSON();
 					for (Proveedores proveedores:lista1) {
-						System.out.println(proveedores);
 						if (proveedores.getNitproveedor().equals(id)) {
 							request.setAttribute("proveedorSeleccionado", proveedores);
 							request.getRequestDispatcher("controlador?menu=Proveedores&accion=Listar").forward(request,

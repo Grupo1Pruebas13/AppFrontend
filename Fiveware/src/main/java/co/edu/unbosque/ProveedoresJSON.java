@@ -108,7 +108,7 @@ public class ProveedoresJSON {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" 
-				+ "\"nitproveedor\":\"" + String.valueOf(proveedor.getNitproveedor())
+				+ "\"nitproveedor\":\"" + id
 				+ "\",\"ciudad_proveedor\": \"" + proveedor.getCiudad_proveedor() 
 				+ "\",\"direccion_proveedor\": \""	+ proveedor.getDireccion_proveedor() 
 				+ "\",\"nombre_proveedor\":\"" + proveedor.getNombre_proveedor() 

@@ -9,7 +9,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -76,12 +75,13 @@ public class ClientesJSON {
 		http.setRequestProperty("Accept", "application/json");
 		http.setRequestProperty("Content-Type", "application/json");
 
-		String data = "{" + "\"cedula_cliente\":\"" + String.valueOf(cliente.getCedula_cliente())
+		String data = "{" 
+				+ "\"cedula_cliente\":\"" + String.valueOf(cliente.getCedula_cliente())
 				+ "\",\"direccion_cliente\":\""	+ cliente.getDireccion_cliente()		
 				+ "\",\"email_cliente\": \"" + cliente.getEmail_cliente() 
 				+ "\",\"nombre_cliente\": \""+ cliente.getNombre_cliente() 
 				+ "\",\"telefono_cliente\":\"" + cliente.getTelefono_cliente() 
-				 + "\"}";
+				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);

@@ -7,11 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 <title>Clientes FiveWare</title>
 <link href="css/Clientes.css" rel="stylesheet" />
-
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body class="bodyusuarios">
@@ -47,37 +45,34 @@
 	<h1>MÓDULO CLIENTES</h1>
 	<div class="contenedorppalclientes" style="width: 1200px;">
 		<div style="width: 300px; float: left;">
-			<!-- <img alt="FiveWare" src="img/logo5waredef.png" style="width: 50px; height: 50px"> -->
-			<h5></h5>
 			<h4>Desde aquí puede gestionar los clientes:</h4>
 			<form class="form-sign" method="get" action="controlador">
 				<div class="form-group">
 					<div class="FormElement">
 						<input type="hidden" name="menu" value="Clientes"> <label
 							for="txtcedula">Cédula:</label> <input type="text" id="txtcedula"
-							name="txtCedula" class="form-control" value="" /><br />
+							name="txtCedula" class="form-control" value="${clienteSeleccionado.getCedula_cliente()}" /><br />
 					</div>
 				</div>
 				<div class="FormElement">
 					<label for="txtdireccion">Dirección:</label> <input type="text"
-						id="txtdireccion" name="txtdireccion" class="form-control" value="">
+						id="txtdireccion" name="txtdireccion" class="form-control" value="${clienteSeleccionado.getDireccion_cliente()}">
 				</div>				
 				<div class="FormElement">
 					<label for="txtemail">Email:</label> <input type="text"
-						id="txtemail" name="email" class="form-control" value="">
+						id="txtemail" name="email" class="form-control" value="${clienteSeleccionado.getEmail_cliente()}">
 				</div>
 				<div class="FormElement">
 					<label for="txtnombre">Nombre:</label> <input type="text"
-						id="txtnombre" name="txtNombre" class="form-control" value="">
+						id="txtnombre" name="txtNombre" class="form-control" value="${clienteSeleccionado.getNombre_cliente()}">
 				</div>
 				<div class="FormElement">
 					<label for="txttelefono">Teléfono:</label> <input type="password"
-						id="txttelefono" name="txttel" class="form-control" value="">
+						id="txttelefono" name="txttel" class="form-control" value="${clienteSeleccionado.getTelefono_cliente()}">
 				</div>
 				<div class="contenedorbtn">
-					<input type="submit" class="btn BtnForm" name="accion"
-						value="Crear"> <input type="submit" class="btn BtnForm"
-						name="accion" value="Actualizar">
+					<input type="submit" class="btn BtnForm" name="accion" value="Crear"> 
+					<input type="submit" class="btn BtnForm" name="accion" value="Actualizar">
 				</div>
 			</form>
 
@@ -116,5 +111,7 @@
 			</table>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -7,11 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 <title>Usuarios FiveWare</title>
 <link href="css/Usuarios.css" rel="stylesheet" />
-
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body class="bodyusuarios">
@@ -44,16 +42,9 @@
 
 		</div>
 	</header>
-
 	<h1>MÓDULO USUARIOS</h1>
-
-
-
-	<!-- prueba prueba prueba prueba -->
 	<div class="contenedorppalusuarios" style="width: 1200px;">
 		<div style="width: 300px; float: left;">
-			<!-- <img alt="FiveWare" src="img/logo5waredef.png" style="width: 50px; height: 50px"> -->
-			<h5></h5>
 			<h4>Desde aquí puede gestionar los usuarios:</h4>
 			<form class="form-sign" method="get" action="controlador">
 				<div class="form-group">
@@ -80,9 +71,8 @@
 						id="txtpassword" name="txtPasswd" class="form-control" value="${usuarioSeleccionado.getPassword()}">
 				</div>
 				<div class="contenedorbtn">
-					<input type="submit" class="btn BtnForm" name="accion"
-						value="Crear"> <input type="submit" class="btn BtnForm"
-						name="accion" value="Actualizar">
+					<input type="submit" class="btn BtnForm" name="accion" value="Crear"> 
+					<input type="submit" class="btn BtnForm" name="accion" value="Actualizar">
 				</div>
 			</form>
 

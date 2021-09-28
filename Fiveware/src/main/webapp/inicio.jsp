@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +29,7 @@
 		<div><a class="cerrarSesion" href="index.jsp">Cerrar Sesión</a></div>
 		<nav class="nav">	
 			<ul>
-				<li class="boton_nav" ><a class="select" href="inicio.jsp"><p class="texto_nav">Inicio</p></a></li>
+				<li class="boton_nav" ><a class="select" href="controlador?menu=Principal"><p class="texto_nav">Inicio</p></a></li>
 				<li class="boton_nav" ><a href="controlador?menu=Usuarios&accion=Listar"><p class="texto_nav">Usuarios</p></a></li>
 				<li class="boton_nav" ><a href="controlador?menu=Clientes&accion=Listar"><p class="texto_nav">Clientes</p></a></li>
 				<li class="boton_nav" ><a href="controlador?menu=Proveedores&accion=Listar"><p class="texto_nav">Proveedores</p></a></li>
