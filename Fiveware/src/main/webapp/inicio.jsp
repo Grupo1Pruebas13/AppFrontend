@@ -7,6 +7,18 @@
 <title>FiveWare Inicio</title>
 <link href="css/estilos.css" rel='stylesheet' />
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+    	touch: true,
+    	pauseOnAction: false,
+    	pauseOnHover: false,
+    });
+  });
+</script>
 </head>
 <body>
 	<header>
@@ -28,5 +40,32 @@
 		</nav>
 	</div>
 	</header>	
+	
+	<div class="flexslider">
+	
+		<ul class="slides">
+		
+			<li>
+				<img src="img/1.jpg" alt="">
+				<section class="flex-caption">
+				<p>DISEÑO DE SOFTWARE A LA MEDIDA </p>
+				</section>
+			</li>
+			<li>
+				<img src="img/2.jpg" alt="">
+				<section class="flex-caption">
+				<p class="texto2">PROFESIONALES EN LA GESTIÓN Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</p>
+				</section>
+			</li>
+			<li>
+				<img src="img/3.jpg" alt="">
+				<section class="flex-caption">
+				<p>DESARROLLO DE APLICACIONES MOVILES</p>
+				</section>
+			</li>
+		
+		</ul>
+	
+	</div>
 </body>
 </html>
