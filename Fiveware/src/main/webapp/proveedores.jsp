@@ -1,9 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page import="co.edu.unbosque.Proveedores"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 <title>Proveedores FiveWare</title>
@@ -18,7 +20,7 @@
 			<div class="usuarioActivo">
 				<p class="nombreUsuario">${usuario.getNombre_usuario()}</p>
 			</div>
-			<a class="cerrarSesion" href="index.jsp">Cerrar Sesión</a>
+			<a class="cerrarSesion" href="index.jsp">Cerrar SesiÃ³n</a>
 			<nav class="nav">
 				<ul>
 					<li class="boton_nav"><a class="select" href="inicio.jsp"><p
@@ -39,13 +41,12 @@
 
 		</div>
 	</header>
-<h1>MÓDULO PROVEEDORES</h1>
+<h1>MÃ“DULO PROVEEDORES</h1>
 	<div>
    		<div class="contenedorppalprov">
-       		<div>
-       		<h5></h5>
-    		<h4></h4>
-           		<form method="get" action="Controlador">
+       		<div style="width: 300px; float: left;">
+    		<h4>Desde aqui puede gestionar los proveedores</h4>
+           		<form method="get" action="controlador">
       		    	<div class="FormElement">
 				         <input type="hidden" name="menu" value="Proveedores">
 				         <label for="txtnit">NIT #:</label>
@@ -58,12 +59,12 @@
 		        	</div>
 		        	
 		        	<div class="FormElement">
-		         		<label for="txtdireccion">Dirección:</label>
+		         		<label for="txtdireccion">DirecciÃ³n:</label>
 		         		<input type="text" id="txtdireccion" name="txtdireccion" class="form-control" value="">
 		        	</div>
 		        	
 		        	<div class="FormElement">
-		         		<label for="txttelefono">Teléfono:</label>
+		         		<label for="txttelefono">TelÃ©fono:</label>
 		         		<input type="text" id="txttelefono" name="txttelefono" class="form-control" value="">
                    	</div>
                    
@@ -79,34 +80,32 @@
     		</div>
   	
  
-    	<table>
+    	<div style="width: 900px; float: right;">
+			<table style="width: 100%;">
     		<caption>FIVEWARE - LISTADO DE USUARIOS</caption>
         	<thead>
 	            <tr>
 	                <th scope="col">NIT</th>
 	                <th scope="col">Nombre</th>
-	                <th scope="col">Dirección</th>
-	                <th scope="col">Teléfono</th>
+	                <th scope="col">DirecciÃ³n</th>
+	                <th scope="col">TelÃ©fono</th>
 	                <th scope="col">Ciudad</th>
-	                <th scope="col">ACCIÓN</th>
+	                <th scope="col">ACCIÃ“N</th>
 	           	</tr>
         	</thead>
-        	<tbody>
-            
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td> 
-	               <a class="BtnForm" href="">Editar</a>
-	               <a class="BtnForm" href="">Eliminar</a>
-	               <!-- <a class="BtnForm" href="">Activar</a>
-	               <a class="BtnForm" href="">Desactivar</a>-->
-	               
-	            </td>
-            </tr>
+        	<tbody>            
+				<%ArrayList<Proveedores> lista = (ArrayList<Proveedores>) request.getAttribute("lista");
+					for (Proveedores proveedor : lista) {%>
+					<tr>
+						<td><%=proveedor.getNitproveedor()%></td>
+						<td><%=proveedor.getNombre_proveedor()%></td>
+						<td><%=proveedor.getDireccion_proveedor()%></td>
+						<td><%=proveedor.getTelefono_proveedor()%></td>
+						<td><%=proveedor.getCiudad_proveedor()%></td>
+						<td><a class="BtnForm" href="controlador?menu=Proveedores&accion=Cargar&id=<%=proveedor.getNitproveedor()%>">Editar</a> 
+							<a class="BtnForm" href="controlador?menu=Proveedores&accion=Eliminar&id=<%=proveedor.getNitproveedor()%>">Eliminar</a></td>
+					</tr>
+					<%}%>
           
         	</tbody>
     	</table>
