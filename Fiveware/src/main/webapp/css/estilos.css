@@ -802,3 +802,58 @@ caption{
 }
 
 /*----------------------------------FIN USUARIOS-----------------------------------*/
+
+
+/*---------------------------------INICIO FOOTER -------------------------------*/
+
+.footerGral{
+	
+	
+}
+
+.footerInicio{
+	justify-content:space-around;
+	width: 100%;
+	height: 190px;
+	display:flex;
+	background-color: #0077B6;
+	
+}
+
+.equipo{
+	color:#fff;
+	
+}
+
+.equipo li{
+	list-style:none;
+}
+
+.queHacemos{
+	color:#fff;
+	
+}
+
+.queHacemos li{
+	list-style:none;
+}
+.redes{
+	color:#fff;
+}
+
+.redes i{
+	color:#fff;
+	font-size:30px;
+	margin-right:10px;
+}
+.contacto{
+	color:#fff;
+}
+
+.contacto li{
+	list-style:none;
+}
+
+
+
+
