@@ -52,12 +52,14 @@
 					<div class="FormElement">
 						<input type="hidden" name="menu" value="Proveedores"> <label
 							for="txtnit">NIT #:</label> <input type="text" id="txtnit"
-							name="txtnit" class="form-control" value="${proveedorSeleccionado.getNitproveedor()}">
+							name="txtnit" class="form-control"
+							value="${proveedorSeleccionado.getNitproveedor()}">
 					</div>
 				</div>
 				<div class="FormElement">
 					<label for="txtnombre">Nombre:</label> <input type="text"
-						id="txtnombre" name="txtnombre" class="form-control" value="${proveedorSeleccionado.getNombre_proveedor()}">
+						id="txtnombre" name="txtnombre" class="form-control"
+						value="${proveedorSeleccionado.getNombre_proveedor()}">
 				</div>
 				<div class="FormElement">
 					<label for="txtdireccion">Dirección:</label> <input type="text"
@@ -66,14 +68,15 @@
 				</div>
 				<div class="FormElement">
 					<label for="txttelefono">Teléfono:</label> <input type="text"
-						id="txttelefono" name="txttelefono" class="form-control" value="${proveedorSeleccionado.getTelefono_proveedor()}">
+						id="txttelefono" name="txttelefono" class="form-control"
+						value="${proveedorSeleccionado.getTelefono_proveedor()}">
 				</div>
 				<div class="FormElement">
 					<label for="txtciudad">Ciudad:</label> <input type="text"
-						id="txtciudad" name="txtciudad" class="form-control" value="${proveedorSeleccionado.getCiudad_proveedor()}">
+						id="txtciudad" name="txtciudad" class="form-control"
+						value="${proveedorSeleccionado.getCiudad_proveedor()}">
 				</div>
 				<div class="contenedorbtn">
-					<a class="BtnForm" href="controlador?menu=Proveedores&accion=Listar">Editar</a>
 					<input type="submit" class="BtnForm" name="accion" value="Crear">
 					<input type="submit" class="BtnForm" name="accion" value="Actualizar">
 				</div>
@@ -95,20 +98,27 @@
 					</tr>
 				</thead>
 				<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td><a class="BtnForm" href="controlador?menu=Proveedores&accion=Cargar&id=${proveedorSeleccionado.getNitproveedor()}">Editar</a>
-						<a class="BtnForm" href="controlador?menu=Proveedores&accion=Eliminar&id=${proveedorSeleccionado.getNitproveedor()}">Eliminar</a></td>
-				</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<a class="BtnForm" href="controlador?menu=Proveedores">Editar</a> 
+							<a class="BtnForm" href="controlador?menu=Proveedores">Eliminar</a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
 </body>
 </html>
