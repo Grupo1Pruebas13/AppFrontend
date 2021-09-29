@@ -24,9 +24,9 @@
 			<a class="cerrarSesion" href="index.jsp">Cerrar Sesión</a>
 			<nav class="nav">
 				<ul>
-					<li class="boton_nav"><a class="select" href="inicio.jsp"><p
+					<li class="boton_nav"><a href="inicio.jsp"><p
 								class="texto_nav">Inicio</p></a></li>
-					<li class="boton_nav"><a href="usuarios.jsp"><p
+					<li class="boton_nav"><a class="select" href="usuarios.jsp"><p
 								class="texto_nav">Usuarios</p></a></li>
 					<li class="boton_nav"><a href="clientes.jsp"><p
 								class="texto_nav">Clientes</p></a></li>
