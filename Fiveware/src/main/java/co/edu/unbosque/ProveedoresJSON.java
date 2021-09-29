@@ -29,8 +29,8 @@ public class ProveedoresJSON {
 			Proveedores proveedor = new Proveedores();
 			proveedor.setNitproveedor(innerObj.get("nitproveedor").toString());
 			proveedor.setCiudad_proveedor(innerObj.get("ciudad_proveedor").toString());
-			proveedor.setNombre_proveedor(innerObj.get("nombre_proveedor").toString());
 			proveedor.setDireccion_proveedor(innerObj.get("direccion_proveedor").toString());
+			proveedor.setNombre_proveedor(innerObj.get("nombre_proveedor").toString());			
 			proveedor.setTelefono_proveedor(innerObj.get("telefono_proveedor").toString());
 			lista.add(proveedor);
 		}
