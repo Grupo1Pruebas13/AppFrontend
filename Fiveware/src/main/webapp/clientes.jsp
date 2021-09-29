@@ -67,7 +67,7 @@
 						id="txtnombre" name="txtNombre" class="form-control" value="${clienteSeleccionado.getNombre_cliente()}">
 				</div>
 				<div class="FormElement">
-					<label for="txttelefono">Teléfono:</label> <input type="password"
+					<label for="txttelefono">Teléfono:</label> <input type="text"
 						id="txttelefono" name="txttel" class="form-control" value="${clienteSeleccionado.getTelefono_cliente()}">
 				</div>
 				<div class="contenedorbtn">
