@@ -73,6 +73,7 @@
 				<div class="contenedorbtn">
 					<input type="submit" class="btn BtnForm" name="accion" value="Crear"> 
 					<input type="submit" class="btn BtnForm" name="accion" value="Actualizar">
+					<input type="submit" class="BtnForm" name="accion" value="Buscar">
 				</div>
 			</form>
 
