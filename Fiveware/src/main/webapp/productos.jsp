@@ -71,7 +71,7 @@
 						value="${productoSeleccionado.getPrecio_venta()}">
 				</div>
 				<div class="FormElement">
-					<label for="txtiva">% IVA</label> <input type="text"
+					<label for="txtiva">Valor IVA</label> <input type="text"
 						id="txtiva" name="txtiva" class="form-control" value="${productoSeleccionado.getIvacompra()}">
 				</div>
 				<div class="contenedorbtn">
