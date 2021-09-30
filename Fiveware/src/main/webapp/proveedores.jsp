@@ -87,9 +87,9 @@
 					<tr>
 						<th scope="col">NIT</th>
 						<th scope="col">Nombre</th>
-						<th scope="col">Dirección</th>
-						<th scope="col">Teléfono</th>
 						<th scope="col">Ciudad</th>
+						<th scope="col">Dirección</th>
+						<th scope="col">Teléfono</th>						
 						<th scope="col">ACCIÓN</th>
 					</tr>
 				</thead>
