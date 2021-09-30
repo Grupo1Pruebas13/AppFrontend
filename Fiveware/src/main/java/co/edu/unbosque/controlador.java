@@ -286,7 +286,92 @@ public class controlador extends HttpServlet {
 			}
 			request.getRequestDispatcher("/proveedores.jsp").forward(request, response);
 			break;
+			
 		case "Productos":
+			if (accion.equals("Listar")) {
+				try {
+					ArrayList<Productos> lista = ProductosJSON.getJSON();
+					request.setAttribute("lista", lista);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Crear")) {
+				Productos producto = new Productos();
+				producto.setCodigo_producto(request.getParameter("txtCedula"));
+				producto.setIvacompra(request.getParameter("txtNombre"));
+				producto.setNitproveedor(request.getParameter("email"));
+				producto.setNombre_producto(request.getParameter("txtUser"));
+				producto.setPrecio_compra(request.getParameter("txtPasswd"));
+				producto.setPrecio_venta(request.getParameter("txtPasswd"));
+
+				int respuesta = 0;
+				try {
+					respuesta = ProductosJSON.postJSON(producto);
+					if (respuesta == 200) {
+						request.getRequestDispatcher("controlador?menu=Productos&accion=Listar").forward(request,
+								response);
+					} else {
+						System.out.println("Error: " + respuesta);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			} else if (accion.equals("Actualizar")) {
+				Productos producto = new Productos();
+				producto.setCodigo_producto(request.getParameter("txtCedula"));
+				producto.setIvacompra(request.getParameter("txtNombre"));
+				producto.setNitproveedor(request.getParameter("email"));
+				producto.setNombre_producto(request.getParameter("txtUser"));
+				producto.setPrecio_compra(request.getParameter("txtPasswd"));
+				producto.setPrecio_venta(request.getParameter("txtPasswd"));
+
+				int respuesta = 0;
+				try {
+					respuesta = ProductosJSON.putJSON(producto, Long.parseLong(producto.getCodigo_producto()));
+					PrintWriter write = response.getWriter();
+
+					if (respuesta == 200) {
+						request.getRequestDispatcher("controlador?menu=Productos&accion=Listar").forward(request,
+								response);
+					} else {
+						write.println("Error: " + respuesta);
+					}
+					write.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Cargar")) {
+				String id = request.getParameter("id");
+				try {
+					ArrayList<Productos> lista1 = ProductosJSON.getJSON();
+					for (Productos productos:lista1) {
+						if (productos.getCodigo_producto().equals(id)) {
+							request.setAttribute("productoSeleccionado", productos);
+							request.getRequestDispatcher("controlador?menu=Productos&accion=Listar").forward(request,
+									response);
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("Eliminar")) {
+				Long id = Long.parseLong(request.getParameter("id"));
+				int respuesta = 0;
+				try {
+					respuesta = ProductosJSON.deleteJSON(id);
+					PrintWriter write = response.getWriter();
+					if (respuesta == 200) {
+						request.getRequestDispatcher("controlador?menu=Productos&accion=Listar").forward(request,
+								response);
+					} else {
+						write.println("Error: " + respuesta);
+					}
+					write.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			request.getRequestDispatcher("/Productos.jsp").forward(request, response);
 			break;
 		case "Ventas":
