@@ -297,12 +297,12 @@ public class controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Crear")) {
 				Productos producto = new Productos();
-				producto.setCodigo_producto(request.getParameter("txtCedula"));
-				producto.setIvacompra(request.getParameter("txtNombre"));
-				producto.setNitproveedor(request.getParameter("email"));
-				producto.setNombre_producto(request.getParameter("txtUser"));
-				producto.setPrecio_compra(request.getParameter("txtPasswd"));
-				producto.setPrecio_venta(request.getParameter("txtPasswd"));
+				producto.setCodigo_producto(request.getParameter("txtcodigo"));
+				producto.setIvacompra(request.getParameter("txtiva"));
+				producto.setNitproveedor(request.getParameter("txtnitprov"));
+				producto.setNombre_producto(request.getParameter("txtnombreprod"));
+				producto.setPrecio_compra(request.getParameter("txtprecioprod"));
+				producto.setPrecio_venta(request.getParameter("txtpreciovta"));
 
 				int respuesta = 0;
 				try {
@@ -319,12 +319,12 @@ public class controlador extends HttpServlet {
 
 			} else if (accion.equals("Actualizar")) {
 				Productos producto = new Productos();
-				producto.setCodigo_producto(request.getParameter("txtCedula"));
-				producto.setIvacompra(request.getParameter("txtNombre"));
-				producto.setNitproveedor(request.getParameter("email"));
-				producto.setNombre_producto(request.getParameter("txtUser"));
-				producto.setPrecio_compra(request.getParameter("txtPasswd"));
-				producto.setPrecio_venta(request.getParameter("txtPasswd"));
+				producto.setCodigo_producto(request.getParameter("txtcodigo"));
+				producto.setIvacompra(request.getParameter("txtiva"));
+				producto.setNitproveedor(request.getParameter("txtnitprov"));
+				producto.setNombre_producto(request.getParameter("txtnombreprod"));
+				producto.setPrecio_compra(request.getParameter("txtprecioprod"));
+				producto.setPrecio_venta(request.getParameter("txtpreciovta"));
 
 				int respuesta = 0;
 				try {
@@ -372,7 +372,7 @@ public class controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
-			request.getRequestDispatcher("/Productos.jsp").forward(request, response);
+			request.getRequestDispatcher("/productos.jsp").forward(request, response);
 			break;
 		case "Ventas":
 			request.getRequestDispatcher("/Ventas.jsp").forward(request, response);

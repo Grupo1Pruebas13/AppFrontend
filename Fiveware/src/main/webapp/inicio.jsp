@@ -34,7 +34,7 @@
 				<li class="boton_nav" ><a href="controlador?menu=Usuarios&accion=Listar"><p class="texto_nav">Usuarios</p></a></li>
 				<li class="boton_nav" ><a href="controlador?menu=Clientes&accion=Listar"><p class="texto_nav">Clientes</p></a></li>
 				<li class="boton_nav" ><a href="controlador?menu=Proveedores&accion=Listar"><p class="texto_nav">Proveedores</p></a></li>
-				<li class="boton_nav" ><a href="#"><p class="texto_nav">Productos</p></a></li>
+				<li class="boton_nav" ><a href="controlador?menu=Productos&accion=Listar"><p class="texto_nav">Productos</p></a></li>
 				<li class="boton_nav" ><a href="#"><p class="texto_nav">Ventas</p></a></li>
 				<li class="boton_nav" ><a href="#"><p class="texto_nav">Reportes</p></a></li>
 			</ul>		
