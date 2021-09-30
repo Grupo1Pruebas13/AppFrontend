@@ -212,9 +212,9 @@ public class controlador extends HttpServlet {
 			} else if (accion.equals("Crear")) {
 				Proveedores proveedor = new Proveedores();
 				proveedor.setNitproveedor(request.getParameter("txtnit"));
+				proveedor.setNombre_proveedor(request.getParameter("txtnombre"));
 				proveedor.setCiudad_proveedor(request.getParameter("txtciudad"));
-				proveedor.setDireccion_proveedor(request.getParameter("txtdireccion"));
-				proveedor.setNombre_proveedor(request.getParameter("txtnombre"));				
+				proveedor.setDireccion_proveedor(request.getParameter("txtdireccion"));				
 				proveedor.setTelefono_proveedor(request.getParameter("txttelefono"));
 
 				int respuesta = 0;
@@ -233,9 +233,9 @@ public class controlador extends HttpServlet {
 			} else if (accion.equals("Actualizar")) {
 				Proveedores proveedor = new Proveedores();
 				proveedor.setNitproveedor(request.getParameter("txtnit"));
+				proveedor.setNombre_proveedor(request.getParameter("txtnombre"));
 				proveedor.setCiudad_proveedor(request.getParameter("txtciudad"));
-				proveedor.setDireccion_proveedor(request.getParameter("txtdireccion"));
-				proveedor.setNombre_proveedor(request.getParameter("txtnombre"));				
+				proveedor.setDireccion_proveedor(request.getParameter("txtdireccion"));				
 				proveedor.setTelefono_proveedor(request.getParameter("txttelefono"));
 
 				int respuesta = 0;

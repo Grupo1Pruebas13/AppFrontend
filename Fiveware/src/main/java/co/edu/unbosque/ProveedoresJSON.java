@@ -76,11 +76,11 @@ public class ProveedoresJSON {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" 
-				+ "\"nitproveedor\":\"" + String.valueOf(proveedor.getNitproveedor())
+				+ "\"nitproveedor\":\"" + proveedor.getNitproveedor()
 				+ "\",\"ciudad_proveedor\": \"" + proveedor.getCiudad_proveedor() 
-				+ "\",\"direccion_proveedor\": \""	+ proveedor.getDireccion_proveedor() 
+				+ "\",\"direccion_proveedor\": \"" + proveedor.getDireccion_proveedor() 
 				+ "\",\"nombre_proveedor\":\"" + proveedor.getNombre_proveedor() 
-				+ "\",\"telefono_proveedor\":\""	+ proveedor.getTelefono_proveedor() 
+				+ "\",\"telefono_proveedor\":\"" + proveedor.getTelefono_proveedor() 
 				+ "\"}";
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -108,12 +108,13 @@ public class ProveedoresJSON {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" 
-				+ "\"nitproveedor\":\"" + id
+				+ "\"nitproveedor\":\"" + proveedor.getNitproveedor()
 				+ "\",\"ciudad_proveedor\": \"" + proveedor.getCiudad_proveedor() 
-				+ "\",\"direccion_proveedor\": \""	+ proveedor.getDireccion_proveedor() 
+				+ "\",\"direccion_proveedor\": \"" + proveedor.getDireccion_proveedor() 
 				+ "\",\"nombre_proveedor\":\"" + proveedor.getNombre_proveedor() 
-				+ "\",\"telefono_proveedor\":\""	+ proveedor.getTelefono_proveedor() 
+				+ "\",\"telefono_proveedor\":\"" + proveedor.getTelefono_proveedor() 
 				+ "\"}";
+		
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);

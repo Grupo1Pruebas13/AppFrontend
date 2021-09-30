@@ -98,17 +98,21 @@
 					</tr>
 				</thead>
 				<tbody>
+					<%ArrayList<Proveedores> lista = (ArrayList<Proveedores>)request.getAttribute("lista");
+					for (Proveedores proveedor : lista) {%>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<a class="BtnForm" href="controlador?menu=Proveedores">Editar</a> 
-							<a class="BtnForm" href="controlador?menu=Proveedores">Eliminar</a>
+						<td><%=proveedor.getNitproveedor()%></td>
+						<td><%=proveedor.getNombre_proveedor()%></td>
+						<td><%=proveedor.getCiudad_proveedor()%></td>
+						<td><%=proveedor.getDireccion_proveedor()%></td>
+						<td><%=proveedor.getTelefono_proveedor()%></td>
+						<td><a class="BtnForm"
+							href="controlador?menu=Proveedores&accion=Cargar&id=<%=proveedor.getNitproveedor()%>">Editar</a>
+							<a class="BtnForm"
+							href="controlador?menu=Proveedores&accion=Eliminar&id=<%=proveedor.getNitproveedor()%>">Eliminar</a>
 						</td>
 					</tr>
+					<%}%>
 				</tbody>
 			</table>
 		</div>
