@@ -17,6 +17,58 @@ public class controlador extends HttpServlet {
 	public controlador() {
 		super();
 	}
+	
+	public void buscarUsuario(String id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		try {
+			ArrayList<Usuarios> listau=UsuariosJSON.getJSON();
+			for(Usuarios usuarios: listau) {
+				if(usuarios.getCedula_usuario().equals(id)) {
+					request.setAttribute("usuarioSeleccionado", usuarios);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void buscarCliente(String id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		try {
+			ArrayList<Clientes> listac=ClientesJSON.getJSON();
+			for(Clientes clientes: listac) {
+				if(clientes.getCedula_cliente().equals(id)) {
+					request.setAttribute("clienteSeleccionado", clientes);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void buscarProveedor(String id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		try {
+			ArrayList<Proveedores> listap=ProveedoresJSON.getJSON();
+			for(Proveedores proveedores: listap) {
+				if(proveedores.getNitproveedor().equals(id)) {
+					request.setAttribute("proveedorSeleccionado", proveedores);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void buscarProducto(String id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		try {
+			ArrayList<Productos> listapr=ProductosJSON.getJSON();
+			for(Productos productos: listapr) {
+				if(productos.getCodigo_producto().equals(id)) {
+					request.setAttribute("productoSeleccionado", productos);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -111,6 +163,11 @@ public class controlador extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}else if(accion.equals("Buscar")) {
+				String id = request.getParameter("txtCedula");
+				this.buscarUsuario(id, request, response);
+				request.getRequestDispatcher("controlador?menu=Usuarios&accion=Listar").forward(request,
+						response);
 			}
 			request.getRequestDispatcher("/usuarios.jsp").forward(request, response);
 			break;
@@ -197,6 +254,11 @@ public class controlador extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}else if(accion.equals("Buscar")) {
+				String id = request.getParameter("txtCedula");
+				this.buscarCliente(id, request, response);
+				request.getRequestDispatcher("controlador?menu=Clientes&accion=Listar").forward(request,
+						response);
 			}
 			request.getRequestDispatcher("/clientes.jsp").forward(request, response);
 			break;
@@ -283,7 +345,13 @@ public class controlador extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}else if(accion.equals("Buscar")) {
+				String id = request.getParameter("txtnit");
+				this.buscarProveedor(id, request, response);
+				request.getRequestDispatcher("controlador?menu=Proveedores&accion=Listar").forward(request,
+						response);
 			}
+			
 			request.getRequestDispatcher("/proveedores.jsp").forward(request, response);
 			break;
 			
@@ -371,7 +439,13 @@ public class controlador extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+			}else if(accion.equals("Buscar")) {
+				String id = request.getParameter("txtcodigo");
+				this.buscarProducto(id, request, response);
+				request.getRequestDispatcher("controlador?menu=Productos&accion=Listar").forward(request,
+						response);
 			}
+			
 			request.getRequestDispatcher("/productos.jsp").forward(request, response);
 			break;
 		case "Ventas":

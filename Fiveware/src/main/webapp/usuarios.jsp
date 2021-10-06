@@ -45,8 +45,8 @@
 				<div class="form-group">
 					<div class="FormElement">
 						<input type="hidden" name="menu" value="Usuarios"> <label
-							for="txtcedula">Cédula:</label> <input type="text" id="txtcedula"
-							name="txtCedula" class="form-control" value="${usuarioSeleccionado.getCedula_usuario()}" /><br />
+							for="txtcedula" >(*) Cédula:</label> <input type="text" id="txtcedula"
+							name="txtCedula" class="form-control" value="${usuarioSeleccionado.getCedula_usuario()}" required/><br />
 					</div>
 				</div>
 				<div class="FormElement">
@@ -65,6 +65,7 @@
 					<label for="txtpassword">Password:</label> <input type="password"
 						id="txtpassword" name="txtPasswd" class="form-control" value="${usuarioSeleccionado.getPassword()}">
 				</div>
+				<div style="color: gray;">(*) Campo requerido para hacer busquedas</div>
 				<div class="contenedorbtn">
 					<input type="submit" class="btn BtnForm" name="accion" value="Crear"> 
 					<input type="submit" class="btn BtnForm" name="accion" value="Actualizar">

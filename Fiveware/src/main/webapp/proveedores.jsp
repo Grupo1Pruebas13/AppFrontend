@@ -46,9 +46,9 @@
 				<div class="form-group">
 					<div class="FormElement">
 						<input type="hidden" name="menu" value="Proveedores"> <label
-							for="txtnit">NIT #:</label> <input type="text" id="txtnit"
+							for="txtnit">(*) NIT #:</label> <input type="text" id="txtnit"
 							name="txtnit" class="form-control"
-							value="${proveedorSeleccionado.getNitproveedor()}">
+							value="${proveedorSeleccionado.getNitproveedor()}" required/>
 					</div>
 				</div>
 				<div class="FormElement">
@@ -71,6 +71,7 @@
 						id="txtciudad" name="txtciudad" class="form-control"
 						value="${proveedorSeleccionado.getCiudad_proveedor()}">
 				</div>
+				<div style="color: gray;">(*) Campo requerido para hacer busquedas</div>
 				<div class="contenedorbtn">
 					<input type="submit" class="BtnForm" name="accion" value="Crear">
 					<input type="submit" class="BtnForm" name="accion" value="Actualizar">

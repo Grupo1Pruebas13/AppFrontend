@@ -43,9 +43,9 @@
 			<form method="get" action="controlador">
 				<div class="FormElement">
 					<input type="hidden" name="menu" value="Productos"> <label
-						for="txtcodigo">Código</label> <input type="text" id="txtcodigo"
+						for="txtcodigo">(*) Código</label> <input type="text" id="txtcodigo"
 						name="txtcodigo" class="form-control"
-						value="${productoSeleccionado.getCodigo_producto()}">
+						value="${productoSeleccionado.getCodigo_producto()}" required/>
 				</div>
 
 				<div class="FormElement">
@@ -74,6 +74,7 @@
 					<label for="txtiva">Valor IVA</label> <input type="text"
 						id="txtiva" name="txtiva" class="form-control" value="${productoSeleccionado.getIvacompra()}">
 				</div>
+				<div style="color: gray;">(*) Campo requerido para hacer busquedas</div>
 				<div class="contenedorbtn">
 					<input type="submit" class="BtnForm" name="accion" value="Crear">
 					<input type="submit" class="BtnForm" name="accion"

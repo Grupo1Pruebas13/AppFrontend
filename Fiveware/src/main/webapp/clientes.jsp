@@ -45,8 +45,8 @@
 				<div class="form-group">
 					<div class="FormElement">
 						<input type="hidden" name="menu" value="Clientes"> <label
-							for="txtcedula">Cédula:</label> <input type="text" id="txtcedula"
-							name="txtCedula" class="form-control" value="${clienteSeleccionado.getCedula_cliente()}" /><br />
+							for="txtcedula">(*) Cédula:</label> <input type="text" id="txtcedula"
+							name="txtCedula" class="form-control" value="${clienteSeleccionado.getCedula_cliente()}" required/><br />
 					</div>
 				</div>
 				<div class="FormElement">
@@ -65,6 +65,7 @@
 					<label for="txttelefono">Teléfono:</label> <input type="text"
 						id="txttelefono" name="txttel" class="form-control" value="${clienteSeleccionado.getTelefono_cliente()}">
 				</div>
+				<div style="color: gray;">(*) Campo requerido para hacer busquedas</div>
 				<div class="contenedorbtn">
 					<input type="submit" class="btn BtnForm" name="accion" value="Crear"> 
 					<input type="submit" class="btn BtnForm" name="accion" value="Actualizar">
