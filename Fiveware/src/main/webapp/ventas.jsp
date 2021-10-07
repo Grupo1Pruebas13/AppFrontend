@@ -29,7 +29,7 @@
 				<input type="submit" name="accion" value="Buscar" class="btnCliente"> 
 			</div>
 			<div class="">
-				<input type="text" name="nombrecliente" class="nomCliente" placeholder="Nombre Cliente" value="${clienteSeleccionado.getNombre_cliente()}" disabled>
+				<input type="text" name="nombrecliente" class="nomCliente" placeholder="Nombre Cliente" value="${clienteSeleccionado.getNombre_cliente()}" readonly="readonly">
 			</div>	
 		</div>
 		
@@ -41,7 +41,7 @@
 					<input type="submit" name="accion" value="Buscar" class="btnProducto">
 				</div>
 				<div class="">
-					<input type="text" name="nombreproducto" class="nomProd" placeholder="Nombre Producto" value="${productoSeleccionado.getNombre_producto()}" disabled>
+					<input type="text" name="nombreproducto" class="nomProd" placeholder="Nombre Producto" value="${productoSeleccionado.getNombre_producto()}" readonly="readonly">
 				</div>	
 					
 			</div>
@@ -54,13 +54,13 @@
 		<div class="contCantValoriva">
 		
 			<div>
-				<input type="text" name="precioproducto" class="precioProd" placeholder="$00000.00" value="${productoSeleccionado.getPrecio_venta()}" disabled>
+				<input type="text" name="precioproducto" class="precioProd" placeholder="$00000.00" value="${productoSeleccionado.getPrecio_venta()}" readonly="readonly">
 			</div>
 			<div class="">
 				<input type="number" name="cantidadproducto" class="cantProd" placeholder="Cantidad" value="1">
 			</div>
 			<div class="">
-				<input type="text" name="ivaproducto" class="ivaProd" placeholder="Valor IVA" value="${productoSeleccionado.getIva_compra()}" disabled>
+				<input type="text" name="ivaproducto" class="ivaProd" placeholder="Valor IVA" value="${productoSeleccionado.getIva_compra()}" readonly="readonly">
 			</div>
 			
 			<div class="btnAgregar">
