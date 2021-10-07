@@ -449,7 +449,7 @@ public class controlador extends HttpServlet {
 			request.getRequestDispatcher("/productos.jsp").forward(request, response);
 			break;
 		case "Ventas":
-			request.getRequestDispatcher("/Ventas.jsp").forward(request, response);
+			request.getRequestDispatcher("/ventas.jsp").forward(request, response);
 			break;
 		}
 	}

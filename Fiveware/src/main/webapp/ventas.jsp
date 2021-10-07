@@ -13,30 +13,7 @@
 <title>Ventas FiveWare</title>
 </head>
 <body class="bodyVentas">
-<!-- 
-<header>
-		<div class="contGeneral">
 
-			<div class="circuloLogo"></div>
-			<img class="logoGeneral" src="img/logo-5ware.png" alt="FiveWare" />
-			<div class="usuarioActivo">
-				<p class="nombreUsuario">${usuario.getNombre_usuario()}</p>
-			</div>
-			<a class="cerrarSesion" href="index.jsp">Cerrar Sesión</a>
-			<nav class="nav">
-				<ul>
-					<li class="boton_nav" ><a href="controlador?menu=Principal"><p class="texto_nav">Inicio</p></a></li>
-					<li class="boton_nav" ><a href="controlador?menu=Usuarios&accion=Listar"><p class="texto_nav">Usuarios</p></a></li>
-					<li class="boton_nav" ><a href="controlador?menu=Clientes&accion=Listar"><p class="texto_nav">Clientes</p></a></li>
-					<li class="boton_nav" ><a href="controlador?menu=Proveedores&accion=Listar"><p class="texto_nav">Proveedores</p></a></li>
-					<li class="boton_nav" ><a href="controlador?menu=Productos&accion=Listar"><p class="texto_nav">Productos</p></a></li>
-					<li class="boton_nav" ><a class="select" href="controlador?menu=Ventas&accion=Listar"><p class="texto_nav">Ventas</p></a></li>
-					<li class="boton_nav" ><a href="#"><p class="texto_nav">Reportes</p></a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
- -->
 <div class="contGralVentas">
 
 	<div class="contSuperior">
@@ -52,7 +29,7 @@
 				<input type="submit" name="accion" value="Buscar" class="btnCliente"> 
 			</div>
 			<div class="">
-				<input type="text" name="nombrecliente" class="nomCliente" placeholder="Nombre Cliente" value="${clienteSeleccionado.getNombre_cliente()}">
+				<input type="text" name="nombrecliente" class="nomCliente" placeholder="Nombre Cliente" value="${clienteSeleccionado.getNombre_cliente()}" disabled>
 			</div>	
 		</div>
 		
@@ -64,7 +41,7 @@
 					<input type="submit" name="accion" value="Buscar" class="btnProducto">
 				</div>
 				<div class="">
-					<input type="text" name="nombreproducto" class="nomProd" placeholder="Nombre Producto" value="${productoSeleccionado.getNombre_producto()}">
+					<input type="text" name="nombreproducto" class="nomProd" placeholder="Nombre Producto" value="${productoSeleccionado.getNombre_producto()}" disabled>
 				</div>	
 					
 			</div>
@@ -77,13 +54,13 @@
 		<div class="contCantValoriva">
 		
 			<div>
-				<input type="text" name="precioproducto" class="precioProd" placeholder="$00000.00" value="${productoSeleccionado.getPrecio_venta()}">
+				<input type="text" name="precioproducto" class="precioProd" placeholder="$00000.00" value="${productoSeleccionado.getPrecio_venta()}" disabled>
 			</div>
 			<div class="">
-				<input type="number" name="cantidadproducto" class="cantProd" placeholder="Cantidad" value="">
+				<input type="number" name="cantidadproducto" class="cantProd" placeholder="Cantidad" value="1">
 			</div>
 			<div class="">
-				<input type="text" name="ivaproducto" class="ivaProd" placeholder="Valor IVA" value="${productoSeleccionado.getIva_compra()}">
+				<input type="text" name="ivaproducto" class="ivaProd" placeholder="Valor IVA" value="${productoSeleccionado.getIva_compra()}" disabled>
 			</div>
 			
 			<div class="btnAgregar">
