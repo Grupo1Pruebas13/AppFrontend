@@ -206,10 +206,6 @@
 
 
 
-
-
-
-
 .contInferior{
 	position:relative;
 	border-radius:20px;
@@ -225,12 +221,14 @@
 }
 
 .titulos {
+	position:relative;
 	padding-top:1%;
 	padding-left:5%;
 	padding-right:10%;
 }
 
 .itemTh{
+	position:relative;
 	padding-left:35px;
 	padding-right:35px;
 }
@@ -437,6 +435,33 @@ a{
 
 @media (max-width: 1440px){
 	
+	
+.titulos {
+	position:relative;
+	padding-top:1%;
+	padding-left:3%;
+	padding-right:5%;
+}
+
+.itemTh{
+	position:relative;
+	padding-left:22px;
+	padding-right:27px;
+}
+
+.contValoresFinalesFact{
+	background-color:#fff;
+	border-radius:25px;
+	margin:10px;
+	padding:10px;
+	width: 94.3%;
+	height:180px;
+	display:flex;
+}
+
+
+
+	
 .circuloLogo{
     background: #CAF0F8;
     border-radius: 50%;
@@ -552,6 +577,46 @@ a{
 
 @media (max-width: 1280px){
 	
+	
+.titulos {
+	position:relative;
+	padding-top:1%;
+	padding-left:3%;
+	padding-right:5%;
+}
+
+.itemTh{
+	position:relative;
+	padding-left:15px;
+	padding-right:25px;
+}
+
+.contValoresFinalesFact{
+	background-color:#fff;
+	border-radius:25px;
+	margin:10px;
+	padding:10px;
+	width: 93.5%;
+	height:180px;
+	display:flex;
+}
+
+.valores{
+	width:33%;
+}
+
+.valoresDatos{
+	padding-left:40px;
+	line-height:55px;
+}
+
+.btnAgregar{
+	width:89%;
+	margin-left:15px;
+	margin-right:9px;
+	padding-top:10px;
+}
+	
 .circuloLogo{
     background: #CAF0F8;
     border-radius: 50%;
@@ -666,6 +731,90 @@ a{
 
 
 @media (max-width: 1024px){
+	
+
+.titulos {
+	position:relative;
+	padding-top:1%;
+	padding-left:3%;
+	padding-right:5%;
+}
+
+.itemTh{
+	position:relative;
+	padding-left:8px;
+	padding-right:15px;
+}
+
+.contValoresFinalesFact{
+	background-color:#fff;
+	border-radius:25px;
+	margin:10px;
+	padding:10px;
+	width: 93.5%;
+	height:180px;
+	display:flex;
+}
+
+.valores{
+	width:33%;
+}
+
+.valoresDatos{
+	padding-left:40px;
+	line-height:55px;
+}
+
+.btnAgregar{
+	width:89%;
+	margin-left:15px;
+	margin-right:9px;
+	padding-top:10px;
+}
+
+.btnGenerar{
+	position:absolute;
+	top:70%;
+	left:15%;
+	padding:20px;
+	border-radius:25px;
+	background-color: #1c641f;
+	color:#fff;
+}
+
+.btnGenerar:hover{
+	background-color:green;
+}
+
+
+.btnNueva{
+	position:absolute;
+	top:70%;
+	right:15%;
+	padding:20px;
+	border-radius:25px;
+	background-color:#bb0000;
+	color:#fff;
+	
+}
+
+.btnNueva:hover{
+	background-color: red;
+}
+
+.numFact{
+	margin-top:38px;
+	margin-left:20px;
+	display:flex;
+	flex-direction:column;
+	width:18%;
+}
+
+.numFactDato{
+	height:50px;
+	width:100px;
+}
+
 	
 .circuloLogo{
     background: #CAF0F8;
