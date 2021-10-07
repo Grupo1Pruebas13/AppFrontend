@@ -13,6 +13,7 @@
 <title>Ventas FiveWare</title>
 </head>
 <body class="bodyVentas">
+<!-- 
 <header>
 		<div class="contGeneral">
 
@@ -35,7 +36,7 @@
 			</nav>
 		</div>
 	</header>
-
+ -->
 <div class="contGralVentas">
 
 	<div class="contSuperior">
