@@ -1,5 +1,4 @@
-<%@page import="co.edu.unbosque.Usuarios"%>
-<%@page import="java.util.ArrayList"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -133,8 +132,8 @@
 			<div class=contValoresFinalesFact>
 				<div class="valores">
 					<label class="valoresDatos">Subtotal</label><br /> <label
-						class="valoresDatos">IVA</label><br /> <label class="valoresDatos">Total
-						a pagar</label><br />
+						class="valoresDatos">IVA</label><br /> <label
+						class="valoresDatos">Total a pagar</label><br />
 				</div>
 				<div class="precios">
 					<input type="text" name="txtsubtotal" class="preciosDatos"
@@ -154,7 +153,7 @@
 
 			<div class="">
 				<a class="btnGenerar" onclick="print()"
-						href="controlador?menu=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedula_cliente()}&UsuarioActivo=${usuarioSeleccionado1.getCedula_usuario()}&numerofactura=${numerofactura}">Generar
+					href="controlador?menu=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedula_cliente()}&UsuarioActivo=${usuarioSeleccionado1.getCedula_usuario()}&numerofactura=${numerofactura}">Generar
 					Venta</a> <a class="btnNueva"
 					href="controlador?menu=Ventas&accion=NuevaVenta">Nueva Venta</a>
 			</div>
