@@ -95,6 +95,34 @@ public class controlador extends HttpServlet {
 		}
 		request.setAttribute("numerofactura", numfac);
 	}
+	
+	public void grabarDetalleVentas (Long numFact, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+		for(int i=0; i<listaVentas.size();i++) {
+			detalle_venta=new Detalle_Ventas();
+			detalle_venta.setCodigo_detalle_venta(i+1);
+			detalle_venta.setCodigo_venta(numFact);
+			detalle_venta.setCodigo_producto(listaVentas.get(i).getCodigo_producto());
+			detalle_venta.setCantidad_producto(listaVentas.get(i).getCantidad_producto());
+			detalle_venta.setValor_venta(listaVentas.get(i).getValor_venta());
+			detalle_venta.setValor_total(listaVentas.get(i).getValor_total());
+			detalle_venta.setValoriva(listaVentas.get(i).getValoriva());
+			
+			int respuesta=0;
+			try {
+				respuesta=DetalleVentasJSON.postJSON(detalle_venta);
+				PrintWriter write= response.getWriter();
+				if(respuesta==200) {
+					System.out.println("Registro grabado en detalle ventas: "+1);
+					request.getRequestDispatcher("controlador?menu=Ventas&accion=default").forward(request,
+							response);
+				}else {
+					write.println("Error detalles ventas: "+ respuesta);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -494,6 +522,9 @@ public class controlador extends HttpServlet {
 				detalle_venta = new Detalle_Ventas();
 				item++;
 				totalapagar = 0;
+				acusubtotal=0;
+				subtotaliva=0;
+				
 				codProducto = Integer.parseInt(request.getParameter("codigoproducto"));
 				descripcion = request.getParameter("nombreproducto");
 				cantidad = Integer.parseInt(request.getParameter("cantidadproducto"));
@@ -543,8 +574,7 @@ public class controlador extends HttpServlet {
 
 					if (respuesta == 200) {
 						System.out.println("Grabacion exitosa " + respuesta);
-						request.getRequestDispatcher("controlador?menu=Ventas&accion=default&UsuarioActivo=${usuario.getCedula_usuario()}").forward(request,
-								response);
+						this.grabarDetalleVentas(ventas.getCodigo_venta(), request, response);
 					} else {
 						write.println("error ventas: " + respuesta);
 					}
@@ -552,8 +582,13 @@ public class controlador extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				listaVentas.clear();
+				item=0;
+				totalapagar=0;
+				acusubtotal=0;
+				subtotailiva=0;
 			} else {
-				String factura = null;
+				String factura = request.getParameter("numerofactura");
 				this.mostrarNumFactura(factura, request, response);
 			}
 			
