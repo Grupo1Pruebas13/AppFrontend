@@ -154,7 +154,7 @@
 
 			<div class="">
 				<a class="btnGenerar" onclick="print()"
-						href="controlador?menu=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedula_cliente()}&UsuarioActivo=${usuarioSeleccionado.getCedula_usuario()}&numerofactura=${numerofactura}">Generar
+						href="controlador?menu=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedula_cliente()}&UsuarioActivo=${usuarioSeleccionado1.getCedula_usuario()}&numerofactura=${numerofactura}">Generar
 					Venta</a> <a class="btnNueva"
 					href="controlador?menu=Ventas&accion=NuevaVenta">Nueva Venta</a>
 			</div>

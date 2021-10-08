@@ -104,7 +104,7 @@ public class controlador extends HttpServlet {
 		
 		String cedula_usuario_activo = request.getParameter("UsuarioActivo");
 		usuarios.setCedula_usuario(cedula_usuario_activo);
-		request.setAttribute("usuarioSeleccionado", usuarios);
+		request.setAttribute("usuarioSeleccionado1", usuarios);
 
 		switch (menu) {
 		case "Principal":
