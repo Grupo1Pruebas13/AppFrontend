@@ -21,7 +21,7 @@
 				<li class="boton_nav" ><a href="controlador?menu=Clientes&accion=Listar" target="fiveframe"><p class="texto_nav">Clientes</p></a></li>
 				<li class="boton_nav" ><a href="controlador?menu=Proveedores&accion=Listar" target="fiveframe"><p class="texto_nav">Proveedores</p></a></li>
 				<li class="boton_nav" ><a href="controlador?menu=Productos&accion=Listar" target="fiveframe"><p class="texto_nav">Productos</p></a></li>
-				<li class="boton_nav" ><a href="controlador?menu=Ventas" target="fiveframe"><p class="texto_nav">Ventas</p></a></li>
+				<li class="boton_nav" ><a href="controlador?menu=Ventas&accion=default&UsuarioActivo=${usuario.getCedula_usuario()}" target="fiveframe"><p class="texto_nav">Ventas</p></a></li>
 				<li class="boton_nav" ><a href="#"><p class="texto_nav">Reportes</p></a></li>
 			</ul>		
 		</nav>
