@@ -85,8 +85,7 @@ public class controlador extends HttpServlet {
 		}
 	}
 	
-	public void mostrarNumFactura(String numFact, HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void mostrarNumFactura(String numFact, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (numFact == null) {
 			numFact = "1";
 			numfac = Integer.parseInt(numFact);
@@ -113,12 +112,12 @@ public class controlador extends HttpServlet {
 				PrintWriter write= response.getWriter();
 				if(respuesta==200) {
 					System.out.println("Registro grabado en detalle ventas: "+1);
-					request.getRequestDispatcher("controlador?menu=Ventas&accion=default").forward(request,
-							response);
+					request.getRequestDispatcher("controlador?menu=Ventas&accion=default").forward(request, response);
 				}else {
 					write.println("Error detalles ventas: "+ respuesta);
 				}
-			} catch (Exception e) {
+				write.close();//agrego línea
+				} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
