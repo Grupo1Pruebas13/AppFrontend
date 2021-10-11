@@ -132,12 +132,12 @@ public class controlador extends HttpServlet {
 				respuesta=DetalleVentasJSON.postJSON(detalle_venta);
 				PrintWriter write= response.getWriter();
 				if(respuesta==200) {
-					System.out.println("Registro grabado en detalle ventas: "+1);
+					System.out.println("Registro grabado en detalle ventas: " + i);
 					request.getRequestDispatcher("controlador?menu=Ventas&accion=default").forward(request, response);
 				}else {
 					write.println("Error detalles ventas: "+ respuesta);
 				}
-				write.close();//agrego l�nea
+				write.close();//agrego linea
 				} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -536,8 +536,8 @@ public class controlador extends HttpServlet {
 				String idc = request.getParameter("cedulacliente");
 				this.buscarCliente(idc, request, response);
 			} else if (accion.equals("AGREGAR PRODUCTO")) {
-				String id = request.getParameter("cedulacliente");
-				this.buscarCliente(id, request, response);
+				String idc = request.getParameter("cedulacliente");
+				this.buscarCliente(idc, request, response);
 				
 				detalle_venta = new Detalle_Ventas();
 				item++;
@@ -575,7 +575,9 @@ public class controlador extends HttpServlet {
 				request.setAttribute("totalsubtotal", acusubtotal);
 				request.setAttribute("totaliva", subtotaliva);
 				request.setAttribute("totalapagar", totalapagar);
+				
 			} else if (accion.equals("GenerarVenta")) {
+				
 				String numFact = request.getParameter("numerofactura");
 				cedulaCliente = request.getParameter("cedulacliente");
 
