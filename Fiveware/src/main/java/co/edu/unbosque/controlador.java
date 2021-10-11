@@ -33,10 +33,16 @@ public class controlador extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			ArrayList<Usuarios> listau = UsuariosJSON.getJSON();
+			int respuesta=0;
 			for (Usuarios usuarios : listau) {
 				if (usuarios.getCedula_usuario().equals(id)) {
 					request.setAttribute("usuarioSeleccionado", usuarios);
+					respuesta=1;
 				}
+			}
+			if(respuesta==0) {
+				String falla = "El numero de documento consultado no registra un usuario activo";
+				request.setAttribute("noFind", falla);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,10 +53,15 @@ public class controlador extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			ArrayList<Clientes> listac = ClientesJSON.getJSON();
+			int respuesta=0;
 			for (Clientes clientes : listac) {
 				if (clientes.getCedula_cliente().equals(id)) {
 					request.setAttribute("clienteSeleccionado", clientes);
 				}
+			}
+			if(respuesta==0) {
+				String falla = "El numero de documento consultado no registra un cliente activo";
+				request.setAttribute("noFind", falla);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,10 +72,15 @@ public class controlador extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			ArrayList<Proveedores> listap = ProveedoresJSON.getJSON();
+			int respuesta=0;
 			for (Proveedores proveedores : listap) {
 				if (proveedores.getNitproveedor().equals(id)) {
 					request.setAttribute("proveedorSeleccionado", proveedores);
 				}
+			}
+			if(respuesta==0) {
+				String falla = "El numero de documento consultado no registra un proveedor activo";
+				request.setAttribute("noFind", falla);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -75,10 +91,15 @@ public class controlador extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			ArrayList<Productos> listapr = ProductosJSON.getJSON();
+			int respuesta=0;
 			for (Productos productos : listapr) {
 				if (productos.getCodigo_producto().equals(id)) {
 					request.setAttribute("productoSeleccionado", productos);
 				}
+			}
+			if(respuesta==0) {
+				String falla = "El codigo consultado no esta creado en la base de datos";
+				request.setAttribute("noFind", falla);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -116,7 +137,7 @@ public class controlador extends HttpServlet {
 				}else {
 					write.println("Error detalles ventas: "+ respuesta);
 				}
-				write.close();//agrego línea
+				write.close();//agrego lï¿½nea
 				} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -589,8 +610,7 @@ public class controlador extends HttpServlet {
 			} else {
 				String factura = request.getParameter("numerofactura");
 				this.mostrarNumFactura(factura, request, response);
-			}
-			
+			}			
 			request.getRequestDispatcher("/ventas.jsp").forward(request, response);
 			break;
 

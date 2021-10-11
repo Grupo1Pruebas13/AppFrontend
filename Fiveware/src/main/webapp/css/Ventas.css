@@ -11,12 +11,10 @@
 /*-------------------------INICIO VENTAS----------------------------------------*/
 
 .contGralVentas{
-	width:50%;
+	width:80%;
 	height:700px;
 	border-radius:20px;
 	background-color:#0077B6;
-	align-items:center;
-	justify-content: space-around;
 	margin-right:auto;
 	margin-left:auto;
 	margin-top:50px;
@@ -61,7 +59,7 @@
 	width:70%;
 	height:50px;
 	font-size:15px;
-	margin-right: 10px;
+	margin-right: 10px;	
 }
 
 .btnCliente{
@@ -87,6 +85,8 @@
 	border:none;
 	height:50px;
 	font-size:15px;
+	text-align: center;
+	font-weight: bold;
 }
 
 .contDatosProducto{
@@ -245,35 +245,39 @@
 }
 
 .valores{
-	width:33%;
+	/*width:33%;*/
+	text-align: center;
+	margin: unset;
 }
 
 .valoresDatos{
-	padding-left:100px;
-	line-height:55px;
+	padding-left:44px;
+	line-height:58px;
 }
 
 .precios{
 	display:flex;
 	flex-direction:column;
-	width:33%;
+	margin: auto;
 }
 
 .preciosDatos{
 	height:50px;
+	text-align: center;
 }
 
 .numFact{
-	margin-top:38px;
-	margin-left:50px;
+	margin-top:56px;
 	display:flex;
 	flex-direction:column;
-	width:18%;
+	align-items: center;
 }
 
 .numFactDato{
-	height:50px;
-	width:130px;
+	height:40px;
+	width:40px;
+	font-weight:bold;
+	text-align:center;
 }
 
 .btnGenerar{

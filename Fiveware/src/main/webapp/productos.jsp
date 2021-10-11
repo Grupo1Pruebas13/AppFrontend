@@ -65,6 +65,7 @@
 		<div style="width: 900px; float: right;">
 			<table style="width: 100%;">
 				<caption>FIVEWARE - LISTADO DE PRODUCTOS</caption>
+				<p style="text-align:center;font-weight: bold;color:black;">${noFind}</p>
 				<thead>
 					<tr>
 						<th scope="col">Código</th>

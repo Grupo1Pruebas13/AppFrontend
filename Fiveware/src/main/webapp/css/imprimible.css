@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+td{
+	text-align: center;
+}
+#tabla{
+	width:100px;
+	margin:0 auto;
+}
+.imaprint{
+	width:200px;
+	margin-top: -139px;
+	margin-left: 154px;
+	position: fixed;
+}
+.print{
+	display:none;
+}
+@media print {	
+  .noPrint{
+    display:none;
+  }
+  .print{
+  	display:block;
+  }
+}

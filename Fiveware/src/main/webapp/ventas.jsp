@@ -10,6 +10,7 @@
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 <link href="css/Ventas.css" rel="stylesheet" />
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="stylesheet" href="css/imprimible.css">
 <title>Ventas FiveWare</title>
 </head>
 <body class="bodyVentas">
@@ -21,14 +22,14 @@
 				<div class=supClienteProduc>
 
 					<div class="contDatosCliente">
-						<label class="datosCliente">Datos Clientes</label> <input
+						<label class="datosCliente">Datos del cliente</label> <input
 							type="hidden" name="menu" value="Ventas"> <input
 							type="hidden" name="UsuarioActivo"
 							value="${usuarioSeleccionado.getCedula_usuario()}">
-						<div class="cedulaBuscar">
+						<div class="cedulaBuscar noPrint">
 							<input type="number" name="cedulacliente" class="inputCedula"
 								placeholder="Cedula Cliente"
-								value="${clienteSeleccionado.getCedula_cliente()}"> <input
+								value="${clienteSeleccionado.getCedula_cliente()}" required> <input
 								type="submit" name="accion" value="Buscar Cliente"
 								class="btnCliente">
 						</div>
@@ -40,7 +41,7 @@
 						</div>
 					</div>
 
-					<div class="contDatosProducto">
+					<div class="contDatosProducto noPrint">
 						<label class="datosProducto">Datos del producto</label>
 						<div>
 							<div class="codProd">
@@ -56,16 +57,11 @@
 									value="${productoSeleccionado.getNombre_producto()}"
 									readonly="readonly">
 							</div>
-
-						</div>
-
+						</div>						
 					</div>
-
 				</div>
-
-
-				<div class="contCantValoriva">
-
+				<p class="print" Style="text-align:center; font-weight:bold;">Siempre pensando en su bienestar y con la innovación de nuestra parte <br>queremos hacer de su día a día algo único</p>
+				<div class="contCantValoriva noPrint">
 					<div>
 						<input type="text" name="precioproducto" class="precioProd"
 							placeholder="$00000.00"
@@ -88,18 +84,12 @@
 							class="agregarProd">
 					</div>
 				</div>
-
-
-
-
-
 			</div>
-
 		</form>
 		<div class="contInferior">
 
-			<div class="titulos">
-				<table class="">
+			<div>
+				<table id="tabla">
 					<thead class="">
 						<tr>
 							<th class="itemTh">#</th>
@@ -133,7 +123,7 @@
 				<div class="valores">
 					<label class="valoresDatos">Subtotal</label><br /> <label
 						class="valoresDatos">IVA</label><br /> <label
-						class="valoresDatos">Total a pagar</label><br />
+						class="valoresDatos" style="font-weight:bold;">Total a pagar</label><br />
 				</div>
 				<div class="precios">
 					<input type="text" name="txtsubtotal" class="preciosDatos"
@@ -143,24 +133,22 @@
 						disabled="disabled" value="${totaliva}"> <input
 						type="text" name="txttotalapagarl" class="preciosDatos"
 						placeholder="$000.000.00" disabled="disabled"
-						value="${totalapagar}">
+						value="${totalapagar}" style="font-weight:bold;font-size: larger;">
 				</div>
 				<div class="numFact">
-					<label>Numero de Factura</label> <input class="numFactDato"
+					<label>Numero de Factura</label><br><input class="numFactDato"
 						type="text" name="numerofactura" value="${numerofactura}">
 				</div>
 			</div>
 
 			<div class="">
-				<a class="btnGenerar" onclick="print()"
+				<a class="btnGenerar noPrint" onclick="window.print();"
 					href="controlador?menu=Ventas&accion=GenerarVenta&cedulacliente=${clienteSeleccionado.getCedula_cliente()}&UsuarioActivo=${usuarioSeleccionado1.getCedula_usuario()}&numerofactura=${numerofactura}">Generar
-					Venta</a> <a class="btnNueva"
+					Venta</a> <a class="btnNueva noPrint"
 					href="controlador?menu=Ventas&accion=NuevaVenta">Nueva Venta</a>
-			</div>
+					<p class="print" style="text-align:center;font-weight:bold;margin-top: 90px;font-size: x-large;" >Gracias por su compra</p>
+			</div>			
 		</div>
-
-
 	</div>
-
 </body>
 </html>

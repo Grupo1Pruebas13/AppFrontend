@@ -14,6 +14,7 @@
 </head>
 <body class="bodyusuarios">
 	<h1>MÓDULO USUARIOS</h1>
+	
 	<div class="contenedorppalusuarios" style="width: 1200px;">
 		<div style="width: 300px; float: left;">
 			<h4>Desde aquí puede gestionar los usuarios:</h4>
@@ -55,6 +56,7 @@
 		<div style="width: 900px; float: right;">
 			<table style="width: 100%;">
 				<caption>FIVEWARE - LISTADO DE USUARIOS</caption>
+				<p style="text-align:center;font-weight: bold;color:black;">${noFind}</p>
 				<thead>
 					<tr>
 						<th scope="col">Cedula</th>
