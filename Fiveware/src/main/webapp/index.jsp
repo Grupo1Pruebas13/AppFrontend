@@ -26,8 +26,6 @@
 				<!--btn-->
 				<input type="submit" name="accion" value="Ingresar"
 					class="btn btn-primary btnlogin"><br />
-				<!--cambiar passwd o crear cuenta-->
-				<a href="#">Olvidé mi contraseña</a>
 			</div>
 		</form>
 	</div>
