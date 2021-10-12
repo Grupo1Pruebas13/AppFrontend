@@ -14,23 +14,29 @@
 <body>
 <h1>MÓDULO REPORTES</h1>
 
-	<div class="contenedorppal">
+	
 		<form method="get" action="controlador">
-				<label>Seleccione el tipo de reporte:</label><br><br>
-					<div class="FormElement">
-					<input class="BtnForm" type="hidden" name="menu" value="Reportes">
-					<input class="BtnForm" type="submit" name="accion" value="ReporteUsuarios"> 
-					<input class="BtnForm" type="submit" name="accion" value="ReporteClientes"> 
-					<input class="BtnForm" type="submit" name="accion" value="ReporteVentas">
-				</div>
+			<div class="Desplegable">
+				<button class="boton">Tipo de Reporte</button>
+					<div class="enlaces">
+						<input class="BtnForm" type="hidden" name="menu" value="Reportes">
+						<input class="BtnForm" type="submit" name="accion" value="ReporteUsuarios"> 
+						<input class="BtnForm" type="submit" name="accion" value="ReporteClientes"> 
+						<input class="BtnForm" type="submit" name="accion" value="ReporteVentas">
+					</div>
+			</div>
+			<br>
+			<br>
+			
 		</form>
-	</div>
+	
 
 		
 		<div class="contenedortabla">
-				<h5>Detalle del Reporte:</h5><br><br>
+				<h5>DETALLE DEL REPORTE:</h5><br>
 				<table>
 				<c:if test="${opcion==1 }">
+				<caption>USUARIOS</caption>
 					<thead>
 					<tr>
 						<th scope="col">Cédula</th>
@@ -51,6 +57,7 @@
 					</tbody>
 				</c:if>
 				<c:if test="${opcion==2 }">
+				<caption>CLIENTES</caption>
 					<thead>
 						<tr>
 							<th scope="col">Cédula</th>
@@ -73,6 +80,7 @@
 					</tbody>
 				</c:if>
 				<c:if test="${opcion==3 }">
+				<caption>VENTAS</caption>
 					<thead>
 						<tr>
 							<th scope="col">Código Venta</th>
