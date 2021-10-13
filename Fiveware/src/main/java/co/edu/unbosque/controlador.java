@@ -1,7 +1,10 @@
 package co.edu.unbosque;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -10,10 +13,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 @WebServlet("/controlador")
 public class controlador extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	private static URL url;
+	private static String sitio = "http://localhost:5000/";
 
 	double subtotal, totalapagar, subtotaliva, acusubtotal, subtotailiva = 0;
 	long codigo_producto, codProducto, numfac = 0;
@@ -104,17 +113,7 @@ public class controlador extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public void mostrarNumFactura(String numFact, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (numFact == null) {
-			numFact = "1";
-			numfac = Integer.parseInt(numFact);
-		} else {
-			numfac = Integer.parseInt(numFact) + 1;
-		}
-		request.setAttribute("numerofactura", numfac);
-	}
+	}	
 	
 	public void grabarDetalleVentas (Long numFact, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		for(int i=0; i<listaVentas.size();i++) {
@@ -142,6 +141,48 @@ public class controlador extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	private String obtenerJson(InputStream respuesta) throws Exception {
+		byte[] inp = respuesta.readAllBytes();
+		String json = "";
+		for (int i = 0; i < inp.length; i++) {
+			json += (char) inp[i];
+		}
+		System.out.println("json::>" + json);
+		return json;
+	}
+	
+	public Long parsingConsecutivo(String json) throws ParseException {
+		Long cod = null;
+		JSONParser jsonParser = new JSONParser();
+		JSONObject innerObj = (JSONObject) jsonParser.parse(json);
+		
+		if(innerObj != null && !innerObj.isEmpty()) {					
+			cod = Long.parseLong(innerObj.get("id").toString());
+		}
+		return cod;
+	}
+	
+	public Long obtenerConsecutivo() throws Exception {
+		Long cod = null;
+		try {
+			url = new URL(sitio + "ventas/sigCod");
+			HttpURLConnection http = (HttpURLConnection) url.openConnection();
+			http.setRequestMethod("GET");
+			http.setRequestProperty("Accept", "application/json");
+			http.setRequestProperty("Content-Type", "application/json");
+			
+			String json =obtenerJson(http.getInputStream());
+			if(json!=null && !json.isEmpty()) {
+				cod = parsingConsecutivo(json);
+			}		
+
+		} catch (Exception e) {
+			System.err.println("No hay resultados para esa consulta::>" + e.getMessage());
+			throw new Exception("No hay resultados para esa consulta");
+		}
+		return cod;
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -525,7 +566,13 @@ public class controlador extends HttpServlet {
 
 		case "Ventas":
 			request.setAttribute("usuarioSeleccionado", usuarios);
-			request.setAttribute("numerofactura", numfac);
+			try {
+				numfac = this.obtenerConsecutivo();
+				request.setAttribute("numerofactura", numfac);
+			} catch (Exception e1) {
+				System.out.println("esto no funciona " + e1);
+				e1.printStackTrace();
+			}
 
 			if (accion.equals("Buscar Cliente")) {
 				String idcli = request.getParameter("cedulacliente");
@@ -609,9 +656,6 @@ public class controlador extends HttpServlet {
 				totalapagar=0;
 				acusubtotal=0;
 				subtotailiva=0;
-			} else {
-				String factura = request.getParameter("numerofactura");
-				this.mostrarNumFactura(factura, request, response);
 			}			
 			request.getRequestDispatcher("/ventas.jsp").forward(request, response);
 			break;
