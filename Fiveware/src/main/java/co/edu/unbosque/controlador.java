@@ -656,7 +656,13 @@ public class controlador extends HttpServlet {
 				totalapagar=0;
 				acusubtotal=0;
 				subtotailiva=0;
-			}			
+			}else if (accion.equals("NuevaVenta")) {
+				listaVentas.clear();
+				item=0;
+				totalapagar=0;
+				acusubtotal=0;
+				subtotailiva=0;
+			}
 			request.getRequestDispatcher("/ventas.jsp").forward(request, response);
 			break;
 			
